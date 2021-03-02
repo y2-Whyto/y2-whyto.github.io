@@ -4,14 +4,24 @@
   <meta charset="utf-8">
   
   
-  <title>Archives: 2021 | Hexo</title>
+  <title>为Dell Inspiron 7572安装Windows 7 (64位) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2021/index.html">
+  <meta name="description" content="使用特定的驱动程序完成Windows 7 (64位)在Dell Inspiron 7572上的安装。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为Dell Inspiron 7572安装Windows 7 (64位)">
+<meta property="og:url" content="http://example.com/2020/05/28/install-windows-7-64-bit-on-dell-inspiron-7572/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="使用特定的驱动程序完成Windows 7 (64位)在Dell Inspiron 7572上的安装。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-27T09:06:36.000Z">
+<meta property="article:modified_time" content="2021-02-26T04:18:09.318Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="7572">
+<meta property="article:tag" content="Dell">
+<meta property="article:tag" content="Intel">
+<meta property="article:tag" content="USB">
+<meta property="article:tag" content="Windows 7">
+<meta property="article:tag" content="驱动程序">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -69,58 +79,103 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/03/02/hello-world/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-03-02T12:25:18.055Z" itemprop="datePublished">Mar 2</time>
+        <section id="main"><article id="post-install-windows-7-64-bit-on-dell-inspiron-7572" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/05/28/install-windows-7-64-bit-on-dell-inspiron-7572/" class="article-date">
+  <time class="dt-published" datetime="2020-05-27T09:06:36.000Z" itemprop="datePublished">2020-05-27</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Windows/">Windows</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/02/hello-world/">Hello World</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      为Dell Inspiron 7572安装Windows 7 (64位)
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/02/25/computer-networks/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-02-24T08:43:00.000Z" itemprop="datePublished">Feb 24</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/25/computer-networks/">计算机网络 (更新中)</a>
-    </h1>
-  
+        <p><strong>文章所讨论内容建立在如下硬件基础上，且仅讨论64位系统安装。</strong> </p>
+<p>计算机型号：Dell Inspiron 7572<br>CPU：Intel Core i7-8550U<br>核心显卡：Intel UHD Graphics 620<br>独立显卡：Nvidia GeForce MX150 4G<br>固态硬盘：NVMe HP SSD EX900 250<br>无线网卡：Qualcomm QCA61x4A 802.11ac</p>
+<blockquote>
+<p><strong>在安装新系统前，建议养成备份重要文件的好习惯。</strong></p>
+</blockquote>
+<h2 id="安装综述"><a href="#安装综述" class="headerlink" title="安装综述"></a>安装综述</h2><p>Windows 7是Microsoft发布于2009年的计算机操作系统，并已于2020年左右停止更新与支持。而Intel自第7代CPU开始已经不再支持Windows 10之前的Windows操作系统了。Windows 7未内置USB 3.0及以后版本的驱动程序、NVMe固态硬盘的驱动程序以及一部分无线网卡的驱动程序，它甚至未直接提供UEFI的启动文件。更不幸的是，HP EX900这款固态硬盘不像Intel的系列固态硬盘；它在<a target="_blank" rel="noopener" href="https://support.hp.com/cn-zh/drivers/selfservice/hp-ex900-m.2-250gb-solid-state-drive/23815829">HP官网</a>上并无对应驱动程序。因此，要在使用UEFI+GPT方式启动的新电脑上安装Windows 7，USB 3.0驱动、固态硬盘驱动、UEFI启动是需要攻克的难题，另外可能还需要提前准备好无线网卡驱动。</p>
+<h2 id="安装前准备"><a href="#安装前准备" class="headerlink" title="安装前准备"></a>安装前准备</h2><ol>
+<li>下载Windows 7 x64的原版镜像，建议选择集成Service Pack 1 (SP1)的镜像，以便减少后期消耗在系统更新上的精力。可以选择使用<a target="_blank" rel="noopener" href="http://msdn.itellyou.cn/">MSDN I Tell You</a>进行下载(ed2k)。下载后将其存放在硬盘上即可。</li>
+<li>下载PE系统安装器，为U盘安装PE系统。个人推荐使用<a target="_blank" rel="noopener" href="http://www.wepe.com.cn/">微PE工具箱</a>，也可以自行选择其他平台。主要目的是保证能够使用其中的WinNTSetup程序。</li>
+<li>下载Dell专用该型号无线网卡驱动(.exe)。此处链接使用了<a target="_blank" rel="noopener" href="https://cloud.189.cn/t/RVVBFnqmQn2i">天翼云盘</a>。访问码：rt0c。也可以在驱动管理软件中或<a target="_blank" rel="noopener" href="http://support.dell.com/">Dell支持官网</a>中自行寻找驱动进行下载。</li>
+<li>下载<a target="_blank" rel="noopener" href="https://downloadcenter.intel.com/zh-cn/download/22824/-USB-3-0-8-9-100-C220-C610-">Intel官方USB 3.0驱动</a>。下载<a target="_blank" rel="noopener" href="https://www.dell.com/support/article/zh-cn/sln307225/d8%E6%9C%BA%E5%99%A8%E5%AE%89%E8%A3%85win7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%88%B6%E4%BD%9Cusb3-0%E5%BC%95%E5%AF%BC%E6%95%99%E7%A8%8B?lang=zh">Dell知识库中使用的USB 3.0驱动与NVMe驱动注入程序</a>，最后之后用到NVMe驱动部分。</li>
+<li>下载<a target="_blank" rel="noopener" href="https://download.csdn.net/download/weixin_38746293/12003707">修改版Intel 8代CPU核显驱动程序</a>。也可以选择使用<a target="_blank" rel="noopener" href="https://cloud.189.cn/t/neqYfu7nA3Mv">天翼网盘</a>。访问码：w2ax。</li>
+<li>将上述驱动程序放置在同一个单独的文件夹下，例如某个命名为“drivers”的文件夹。这个文件夹下至少应该包含这些内容：<ol>
+<li>第4步中下载的USB 3.0驱动文件夹(/Intel(R)_USB_3.0_eXtensible_Host_Controller_Driver_5.0.4.43_v2/Drivers)；</li>
+<li>第4步中下载的Win7_Boot文件夹的IRST部分(/Win7_Boot/Drivers/IRST)。</li>
+</ol>
+</li>
+</ol>
+<h2 id="BIOS设置"><a href="#BIOS设置" class="headerlink" title="BIOS设置"></a>BIOS设置</h2><p>开机时按下F2进入计算机的BIOS设置，将“Secure Boot”关闭，并确保将SATA访问模式设置为“Raid On”。将更改保存后退出重启。</p>
+<h2 id="安装Windows-7"><a href="#安装Windows-7" class="headerlink" title="安装Windows 7"></a>安装Windows 7</h2><p>在设置了BIOS之后，将U盘插入计算机。开机时按下F12进入启动选择页面，选择USB设备选项，进入PE系统。</p>
+<p>在PE系统内进行分区操作，并在DiskGenius内为计算机的EFI分区(ESP)分配盘符。</p>
+<p>打开PE系统内置的WinNTSetup程序。根据PE系统提供来源的不同，该程序可能在桌面或开始菜单中被命名为类似于“Windows安装”的名称。安装来源选择之前下载的Windows 7镜像文件(.iso)，引导分区为之前挂载的EFI分区，安装分区为自行划分的分区(若希望全新安装，可进行格式化操作)。注入驱动的文件夹选择前文提到的“drivers”文件夹。选择安装版本，并根据需要进行“优化调整”配置之后，点击“开始安装”按钮，勾选“添加已有Windows版本选项”。点击“开始”按钮，即可自动复制Windows 7系统文件。</p>
+<p>复制结束之后，将计算机重启，即可进入Windows 7安装向导界面。对安装向导进行相关配置之后，即可进入桌面。</p>
+<h2 id="为Windows-7继续安装驱动程序"><a href="#为Windows-7继续安装驱动程序" class="headerlink" title="为Windows 7继续安装驱动程序"></a>为Windows 7继续安装驱动程序</h2><p>当安装Windows 7成功后，首先调整屏幕分辨率和缩放比例。一般调整为1920×1080分辨率，125%缩放比例。</p>
+<p>接下来安装无线网卡驱动程序，打开之前下载的网卡驱动安装文件进行安装即可。</p>
+<p>之后安装Intel 8代CPU的核显驱动程序，打开之前下载的核显驱动程序安装文件，将文件夹解压之后，直接运行“setup.exe”即可。由于下载的安装文件为.rar格式，因此可能需要提前安装压缩软件。个人推荐使用<a target="_blank" rel="noopener" href="https://www.rarlab.com/download.htm">WinRAR</a>，如果担心广告，使用繁体中文版并进行注册即可解决。注册方法可以自行搜索。安装结束后默认勾选了评级与Aero桌面选项，若不进行更改，则重启后初次进入系统时，桌面会保持黑屏，仅鼠标可见。此时按下Control-Shift-Escape调出Windows任务管理器窗口后，即可恢复正常显示，并且此时Aero效果已经打开。</p>
+<p>在安装了核显驱动之后，才可以安装Nvidia GeForce独显驱动。直接在<a target="_blank" rel="noopener" href="https://www.geforce.cn/drivers">GeForce官网</a>上进行下载并安装即可。如果安装出现蓝屏，也可以先安装<a target="_blank" rel="noopener" href="https://www.nv-drivers.eu/download-driver-for-GeForceMX150-and-Windows7-64bit-with-id-164.html">该版本驱动程序</a>，它支持Windows 7。也可以选择使用<a target="_blank" rel="noopener" href="https://cloud.189.cn/t/Fb2EneqIRFny">天翼云盘</a>下载。访问码：god9。之后再进行升级。</p>
+<h2 id="善后处理"><a href="#善后处理" class="headerlink" title="善后处理"></a>善后处理</h2><ul>
+<li>打开Windows Update，进行系统更新。</li>
+<li>激活Windows。</li>
+<li>安装其他浏览器(如<a target="_blank" rel="noopener" href="https://www.google.cn/chrome/">Google Chrome</a>)，并用它打开<a target="_blank" rel="noopener" href="https://support.microsoft.com/zh-cn/help/18520/download-internet-explorer-11-offline-installer">此页面</a>下载并更新Internet Explorer 8至Intrnet Explorer 11。此操作建议在进行Windows Update更新之后再进行。</li>
+<li>继续安装其他驱动。若使用Dell SupportAssist或Dell Update等，则它(们)不能提供很多有用的驱动程序，因为Dell Inspiron 7572机型在Dell支持官网上本身不支持Windows 10 x64之前的Windows操作系统，也没有相应驱动。</li>
+</ul>
+<h2 id="未尽事宜"><a href="#未尽事宜" class="headerlink" title="未尽事宜"></a>未尽事宜</h2><ul>
+<li>触摸板驱动等其他驱动。</li>
+</ul>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/05/28/install-windows-7-64-bit-on-dell-inspiron-7572/" data-id="ckls0xryj0006mlfyc8yp6ytz" data-title="为Dell Inspiron 7572安装Windows 7 (64位)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/7572/" rel="tag">7572</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dell/" rel="tag">Dell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Intel/" rel="tag">Intel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/USB/" rel="tag">USB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows-7/" rel="tag">Windows 7</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F/" rel="tag">驱动程序</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/08/17/personal-manjaro-arch-linux-configuration-record/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          个人Manjaro配置记录
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/08/installing-chromium-os-on-pc/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">为PC安装Chromium OS</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
 </section>

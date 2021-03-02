@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>为小米8刷入Pixel Experience | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="使用PC与小米8手机为后者刷入Pixel Experience ROM。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为小米8刷入Pixel Experience">
+<meta property="og:url" content="http://example.com/2019/08/30/flashing-pixel-experience-for-xiaomi-mi-8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="使用PC与小米8手机为后者刷入Pixel Experience ROM。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-08-29T08:52:52.000Z">
+<meta property="article:modified_time" content="2021-02-26T04:17:34.114Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="MIUI">
+<meta property="article:tag" content="Pixel Experience">
+<meta property="article:tag" content="刷机">
+<meta property="article:tag" content="安卓">
+<meta property="article:tag" content="小米">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-flashing-pixel-experience-for-xiaomi-mi-8" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/08/30/flashing-pixel-experience-for-xiaomi-mi-8/" class="article-date">
+  <time class="dt-published" datetime="2019-08-29T08:52:52.000Z" itemprop="datePublished">2019-08-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android%E5%88%B7%E6%9C%BA/">Android刷机</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      为小米8刷入Pixel Experience
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>文章所讨论内容建立在手机型号为小米8、刷入前的ROM为MIUI 10开发版、PC操作系统为Windows 10的基础上。</strong>文章中出现的带星号(*)的小节可根据实际情况跳过。</p>
+</blockquote>
+<blockquote>
+<p><strong>在安装前，PC端需要安装Android SDK。如果已安装了<a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio">Android Studio</a>，则Android SDK已经一并安装，安装目录默认为</strong><code>%USERPROFILE%\AppData\Local\Android\Sdk</code><strong>。另外，建议将</strong><code>%USERPROFILE%\AppData\Local\Android\Sdk\platform-tools</code><strong>添加至用户环境变量</strong><code>Path</code><strong>中，以便以后直接使用</strong><code>adb</code><strong>命令。</strong></p>
+</blockquote>
+<h2 id="解锁Bootloader"><a href="#解锁Bootloader" class="headerlink" title="解锁Bootloader"></a>解锁Bootloader</h2><p>在<a target="_blank" rel="noopener" href="http://www.miui.com/unlock/index.html">此处</a>申请解锁手机，需要先登录小米帐号获取资格后，再在<a target="_blank" rel="noopener" href="http://miuirom.xiaomi.com/rom/u1106245679/3.4.703.18/miflash_unlock-3.4.703.18.zip">此处</a>获取解锁工具，进行解锁。使用解锁工具时也需要登录小米帐号进行资格检测。</p>
+<p>手机在解锁之后，会自动重启。</p>
+<h2 id="为小米手机刷入MIUI-10开发版"><a href="#为小米手机刷入MIUI-10开发版" class="headerlink" title="*为小米手机刷入MIUI 10开发版"></a>*为小米手机刷入MIUI 10开发版</h2><p><del>如果能够正常使用系统自带的卡刷方式刷入官网上提供的最新刷机包，则可以直接通过官方升级方式刷入MIUI 10开发版。若此方法不起作用(如出现错误提示，或提示“不允许刷入非最新版的开发版”)，则可以通过线刷的方式刷入MIUI 10开发版。在<a target="_blank" rel="noopener" href="http://bigota.d.miui.com/tools/MiFlash2018-5-28-0.zip">此处</a>获取小米手机线刷工具(MiFlash)。</del></p>
+<p><del>由于官方已经取消了开发版线刷包的更新，并删除了已发布的开发版线刷包，故无法通过MIUI论坛或小米社区下载，但仍可通过<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1FYBEkI52Wpc9SBdF582kbw">此处</a>(提取码：2ecq)或<a target="_blank" rel="noopener" href="https://roms.miuier.com/devices/dipper">此处</a>下载之前保存的官方版MIUI 10开发版线刷包。</del></p>
+<p><del>在手机关机状态下同时按住电源键和音量减小键，将手机启动至Bootloader，将手机通过USB连接线连接PC，打开MiFlash，依次点击“Driver”，“安装”。安装驱动后，选择下载的开发版线刷包，点击“加载设备”，选择设备后点击“刷机”即可。</del></p>
+<p>如今直接使用小米手机线刷工具在稳定版系统上刷入开发版系统会导致无法开机；经测试，使用<a target="_blank" rel="noopener" href="http://www.7to.cn/">奇兔刷机</a>线刷的开发版系统可以正常开机。另外，使用奇兔刷机也可刷入TWRP。</p>
+<h2 id="刷入TWRP"><a href="#刷入TWRP" class="headerlink" title="刷入TWRP"></a>刷入TWRP</h2><blockquote>
+<p>此处<strong>只介绍通过PC端</strong>刷入TWRP的方法。</p>
+</blockquote>
+<p>进入<a target="_blank" rel="noopener" href="https://dl.twrp.me/dipper/">此页面</a>，下载最新版本的TWRP镜像至PC端。</p>
+<p>可以使用奇兔刷机刷入该TWRP。</p>
+<p>另外，也可以使用“命令提示符”刷入。</p>
+<p>将手机通过USB连接线连接PC，在手机上启用“开发者选项”，进入“开发者选项”，打开“通过USB调试”，并同意“一律允许此计算机进行调试”。</p>
+<p>打开“命令提示符”(CMD)，在为Android SDK添加过环境变量的情况下，输入如下指令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb reboot bootloader</span><br><span class="line">fastboot flash recovery [twrp-xx.img路径]</span><br></pre></td></tr></table></figure>
+
+<h2 id="刷入Pixel-Experience"><a href="#刷入Pixel-Experience" class="headerlink" title="刷入Pixel Experience"></a>刷入Pixel Experience</h2><p>进入<a target="_blank" rel="noopener" href="https://download.pixelexperience.org/dipper/">此页面</a>，下载Pixel Experience ROM。将手机重启至Recovery模式，在TWRP中点击“清除”，将/data分区清除。回到TWRP的主界面， 将ROM拷贝至手机存储中， 点击“安装”，选择ROM所在路径，进行刷机。</p>
+<h2 id="获取Root权限"><a href="#获取Root权限" class="headerlink" title="获取Root权限"></a>获取Root权限</h2><p>打开设置，进入授权管理，获取系统自带的Root权限。在开启Root权限前，系统会弹出确认窗口，并强制要求等待25秒(每5秒需要确认一次，并弹出下一个窗口)。</p>
+<p>当获取Root权限后，手机会自动重启。</p>
+<h2 id="刷入Magisk"><a href="#刷入Magisk" class="headerlink" title="刷入Magisk"></a>刷入Magisk</h2><p>在手机上打开<a target="_blank" rel="noopener" href="https://magiskmanager.com/">Magisk官网</a>，下载安装Magisk Manager，在其中安装Magisk，方式选“直接安装”，此后Root权限将由Magisk掌管分配。</p>
+<h2 id="进行原系统备份"><a href="#进行原系统备份" class="headerlink" title="*进行原系统备份"></a>*进行原系统备份</h2><blockquote>
+<p><strong>请注意，该备份方法并不能将手机应用、设置、联系人等数据迁移至新系统中。</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>使用该方法备份前，请注意手机剩余存储空间是否充足。</strong></p>
+</blockquote>
+<p>在手机关机状态下同时按住电源键和音量增大键，或在PC端的“命令提示符”中输入指令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb reboot recovery</span><br></pre></td></tr></table></figure>
+
+<p>使手机进入Recovery模式，就可以看到手机已成功刷入TWRP。</p>
+<p>进入TWRP时需要输入锁屏密码，并且可以选择调整语言至简体中文。进入TWRP后选择“备份”，除默认分区外，还可以再另外勾选“System镜像”分区，进行备份。备份过程中会显示备份文件路径，在备份完成后将备份文件从其文件路径拷贝至PC。</p>
+<h2 id="刷机后必须立刻做的事情"><a href="#刷机后必须立刻做的事情" class="headerlink" title="刷机后必须立刻做的事情"></a>刷机后必须立刻做的事情</h2><h3 id="禁用首次开机指引-适用于Android-Pie"><a href="#禁用首次开机指引-适用于Android-Pie" class="headerlink" title="禁用首次开机指引(适用于Android Pie)"></a>禁用首次开机指引(适用于Android Pie)</h3><blockquote>
+<p><strong>请注意，该方法并不适用于Android 10</strong> (Android 11及以上版本亦未测试)；Android 10用户请参考文章《<a target="_blank" rel="noopener" href="https://whyto.net/archives/sharing-vpn-connection-through-windows-hotspot/">通过Windows移动热点分享VPN连接</a>》，设法在开机时连接至Google。另外，上述方法适用于各种Android版本，且更为推荐使用。</p>
+</blockquote>
+<p>刷机完成后，<strong>先不要进入系统</strong>。</p>
+<p>在初次使用时，系统会进入开机指引。以往有时可以通过取出SIM卡的方式跳过网络相关的设置，但是现在这种方式并不稳定，有时会出现无法跳过，必须联网的现象。显然国内的网络情况无法满足。因此，为了避免出现这样的问题，减少不必要的麻烦，可以在开机前将开机指引禁用。</p>
+<p>该方法参考了<a target="_blank" rel="noopener" href="https://www.v2ex.com/t/485478">V2EX的一个页面</a>。</p>
+<p>保持手机与PC通过USB连接线连接，在手机TWRP界面内，点击“挂载”，勾选“/system”分区，点击“停用MTP模式”，再将其启用。</p>
+<p>在PC端打开“命令提示符”，输入指令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb pull system/build.prop [桌面路径]\build.prop</span><br></pre></td></tr></table></figure>
+
+<p>在桌面使用编辑器编辑拷贝得到的build.prop文件，在文件末尾添加：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">ro.setupwizard.mode</span>=<span class="string">DISABLED</span></span><br></pre></td></tr></table></figure>
+
+<p>保存后，在CMD中输入：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adb push [桌面路径]\build.prop system</span><br><span class="line">adb shell</span><br><span class="line">cd system/</span><br><span class="line">chmod 0644 build.prop</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+<p>这样，开机指引就被禁用了。用户可以在初次开机时直接进入启动器界面，待时机合适时，可以通过通知栏或设置中的提示进行设置。</p>
+<h3 id="更换网络验证地址"><a href="#更换网络验证地址" class="headerlink" title="更换网络验证地址"></a>更换网络验证地址</h3><p>禁用开机验证后，开启手机，连接无线网络之后，即使网络畅通，系统依然会显示网络不可用，原因是用于验证网络是否畅通的地址的服务器是Google的。</p>
+<p>要解决该问题，则需要将网络验证地址更换，此处更换为MIUI的网络验证地址。</p>
+<p>打开手机的开发者选项，开启“通过USB调试”，将手机通过USB连接线与PC连接，在手机上点击“一律允许此计算机进行调试”。之后在PC端的CMD中输入指令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_https_url https://connect.rom.miui.com/generate_204</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/08/30/flashing-pixel-experience-for-xiaomi-mi-8/" data-id="ckls0xryi0004mlfy40n28ugi" data-title="为小米8刷入Pixel Experience" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MIUI/" rel="tag">MIUI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pixel-Experience/" rel="tag">Pixel Experience</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%B7%E6%9C%BA/" rel="tag">刷机</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E5%8D%93/" rel="tag">安卓</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B0%8F%E7%B1%B3/" rel="tag">小米</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/10/12/sharing-vpn-connection-through-windows-hotspot/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          通过Windows移动热点分享VPN连接
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/29/configuring-environment-variables-for-jdk-11/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JDK 11的环境变量配置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android%E5%88%B7%E6%9C%BA/">Android刷机</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Chromium-OS/">Chromium OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Linux/">Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Linux/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/">软件使用</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/%E6%9C%AA%E5%88%86%E7%B1%BB/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/">网络相关</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/">网络相关</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%8D%B8%E8%BD%BD/">软件卸载</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/7572/" rel="tag">7572</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arch-Linux/" rel="tag">Arch Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome-OS/" rel="tag">Chrome OS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chromefy/" rel="tag">Chromefy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Connectify/" rel="tag">Connectify</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dell/" rel="tag">Dell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eclipse/" rel="tag">Eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Intel/" rel="tag">Intel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/" rel="tag">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MIUI/" rel="tag">MIUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Manjaro/" rel="tag">Manjaro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pixel-Experience/" rel="tag">Pixel Experience</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSTap/" rel="tag">SSTap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USB/" rel="tag">USB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/" rel="tag">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-7/" rel="tag">Windows 7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%B7%E6%9C%BA/" rel="tag">刷机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%B8%E8%BD%BD/" rel="tag">卸载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%8D%93/" rel="tag">安卓</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E8%A3%85/" rel="tag">安装</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E7%B1%B3/" rel="tag">小米</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B1%89%E5%8C%96/" rel="tag">汉化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" rel="tag">环境变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB/" rel="tag">网络共享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%85%8D%E7%BD%AE/" rel="tag">配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F/" rel="tag">驱动程序</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/7572/" style="font-size: 10px;">7572</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Arch-Linux/" style="font-size: 10px;">Arch Linux</a> <a href="/tags/Chrome-OS/" style="font-size: 10px;">Chrome OS</a> <a href="/tags/Chromefy/" style="font-size: 10px;">Chromefy</a> <a href="/tags/Connectify/" style="font-size: 10px;">Connectify</a> <a href="/tags/Dell/" style="font-size: 10px;">Dell</a> <a href="/tags/Eclipse/" style="font-size: 10px;">Eclipse</a> <a href="/tags/Intel/" style="font-size: 10px;">Intel</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MIUI/" style="font-size: 10px;">MIUI</a> <a href="/tags/Manjaro/" style="font-size: 20px;">Manjaro</a> <a href="/tags/OS/" style="font-size: 10px;">OS</a> <a href="/tags/Pixel-Experience/" style="font-size: 10px;">Pixel Experience</a> <a href="/tags/SSTap/" style="font-size: 10px;">SSTap</a> <a href="/tags/USB/" style="font-size: 10px;">USB</a> <a href="/tags/VPN/" style="font-size: 20px;">VPN</a> <a href="/tags/Windows-7/" style="font-size: 10px;">Windows 7</a> <a href="/tags/%E5%88%B7%E6%9C%BA/" style="font-size: 10px;">刷机</a> <a href="/tags/%E5%8D%B8%E8%BD%BD/" style="font-size: 10px;">卸载</a> <a href="/tags/%E5%AE%89%E5%8D%93/" style="font-size: 10px;">安卓</a> <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 10px;">安装</a> <a href="/tags/%E5%B0%8F%E7%B1%B3/" style="font-size: 10px;">小米</a> <a href="/tags/%E6%B1%89%E5%8C%96/" style="font-size: 10px;">汉化</a> <a href="/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" style="font-size: 10px;">环境变量</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 20px;">网络</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB/" style="font-size: 10px;">网络共享</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a> <a href="/tags/%E9%85%8D%E7%BD%AE/" style="font-size: 20px;">配置</a> <a href="/tags/%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">驱动程序</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/03/02/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/25/computer-networks/">计算机网络 (更新中)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/21/eclipse-java-installation-chinese-localization-and-configuration-on-manjaro/">Manjaro上的Eclipse (Java)安装与配置(包括汉化)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/17/personal-manjaro-arch-linux-configuration-record/">个人Manjaro配置记录</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/28/install-windows-7-64-bit-on-dell-inspiron-7572/">为Dell Inspiron 7572安装Windows 7 (64位)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
