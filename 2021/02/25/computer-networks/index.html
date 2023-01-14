@@ -1,0 +1,419 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>计算机网络 (更新中) | Whyto的笔记存放站</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/latest/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/latest/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/latest/grids-responsive-min.min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/latest/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="//lib.baomitu.com/clipboard.js/latest/clipboard.min.js"></script><script type="text/javascript" src="//lib.baomitu.com/toastr.js/latest/toastr.min.js"></script><link rel="stylesheet" href="//lib.baomitu.com/toastr.js/latest/toastr.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">计算机网络 (更新中)</h1><a id="logo" href="/.">Whyto的笔记存放站</a><p class="description">一个菜鸡的备忘录</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">计算机网络 (更新中)</h1><div class="post-meta">2021-02-24<span> | </span><span class="category"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AF%E8%AF%AD%E8%A1%A8"><span class="toc-number">1.</span> <span class="toc-text">术语表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">计算机网络体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0"><span class="toc-number">2.1.</span> <span class="toc-text">计算机网络概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E6%88%90"><span class="toc-number">2.1.2.</span> <span class="toc-text">组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-number">2.1.3.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">2.1.4.</span> <span class="toc-text">分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">2.1.5.</span> <span class="toc-text">性能指标</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E4%B8%8E%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">计算机网络体系结构与参考模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%B1%82%E7%BB%93%E6%9E%84"><span class="toc-number">2.2.1.</span> <span class="toc-text">分层结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%9C%8D%E5%8A%A1"><span class="toc-number">2.2.2.</span> <span class="toc-text">协议、接口、服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ISO-x2F-OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.3.</span> <span class="toc-text">ISO&#x2F;OSI参考模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP-x2F-IP%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.4.</span> <span class="toc-text">TCP&#x2F;IP模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-number">2.2.5.</span> <span class="toc-text">两模型的比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5%E5%B1%82%E5%8D%8F%E8%AE%AE%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.6.</span> <span class="toc-text">5层协议的体系结构模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="toc-number">3.</span> <span class="toc-text">物理层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80"><span class="toc-number">3.1.</span> <span class="toc-text">通信基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">3.1.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A5%88%E5%A5%8E%E6%96%AF%E7%89%B9%E5%AE%9A%E7%90%86"><span class="toc-number">3.1.2.</span> <span class="toc-text">奈奎斯特定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A6%99%E5%86%9C%E5%AE%9A%E7%90%86"><span class="toc-number">3.1.3.</span> <span class="toc-text">香农定理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-number">4.</span> <span class="toc-text">数据链路层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-number">5.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-number">6.</span> <span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-number">7.</span> <span class="toc-text">应用层</span></a></li></ol></div></div><div class="post-content"><h2 id="术语表"><a href="#术语表" class="headerlink" title="术语表"></a>术语表</h2><table>
+<thead>
+<tr>
+<th>术语</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>透明性</strong></td>
+<td>客观存在并且运行着但是<strong>看不到</strong>的特性。</td>
+</tr>
+<tr>
+<td><strong>协议栈</strong></td>
+<td>协议的<strong>栈</strong>。通常分为三个主要部分：媒体，传输和应用。</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="计算机网络体系结构"><a href="#计算机网络体系结构" class="headerlink" title="计算机网络体系结构"></a>计算机网络体系结构</h2><h3 id="计算机网络概述"><a href="#计算机网络概述" class="headerlink" title="计算机网络概述"></a>计算机网络概述</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>三种观点。</p>
+<ol>
+<li>广义观点：任何能实现<u>远程信息处理</u>的系统或能进一步达到<u>资源共享</u>的系统。计算机网络发展的<strong>低级</strong>阶段。</li>
+<li>资源共享观点：以能够相互<u>共享资源</u>的方式<u>互联</u>起来的<u>自治计算机系统</u>的集合。符合<strong>目前</strong>计算机网络的基本特征。<ul>
+<li>目的：资源共享</li>
+<li>组成单元：分布在不同地理位置的多台独立的“自治计算机”</li>
+<li>统一规则：网络协议</li>
+</ul>
+</li>
+<li>用户透明性观点：能够为用户<u>自动管理资源</u>、<u>调用用户所需要的资源</u>的，<u>大型的，透明的</u>网络<u>操作系统</u>。描述了一个<strong>分布式系统</strong>，是<strong>未来</strong>发展追求的目标。</li>
+</ol>
+<h4 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h4><p>三个角度。</p>
+<ol>
+<li><p><strong>组成部分</strong>上：<strong>硬件</strong>、<strong>软件</strong>、<strong>协议</strong>。</p>
+<ul>
+<li>硬件：主机（端系统）、通信链路（双绞线、光纤等）、交换设备（路由器、交换机等）、通信处理机（网卡等）等。</li>
+<li>软件：多属于应用层。</li>
+<li>协议（<strong>核心</strong>）：规定了网络传输数据时的规范。</li>
+</ul>
+</li>
+<li><p><strong>工作方式</strong>上：<strong>边缘部分</strong>、<strong>核心部分</strong>。</p>
+<ul>
+<li>边缘部分：连接到因特网上、供用户直接使用的主机组成。进行通信和资源共享。</li>
+<li>核心部分：大量网络和连接网络的路由器组成。为边缘部分提供连通性和交换服务。</li>
+</ul>
+</li>
+<li><p><strong>功能组成</strong>上（<strong>逻辑功能</strong>上）：<strong>通信子网</strong>、<strong>资源子网</strong>。</p>
+<ul>
+<li>通信子网：传输介质、通信设备、网络协议。实现<strong>数据通信</strong>。</li>
+<li>资源子网：设备和软件的集合。实现<strong>资源共享</strong>，向网络用户共享其他计算机上的硬件资源、软件资源、数据资源服务。</li>
+</ul>
+</li>
+</ol>
+<h4 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h4><p>主要有<strong>五大功能</strong>：数据通信、资源共享、分布式处理、提高可靠性、负载均衡。</p>
+<ol>
+<li><strong>数据通信</strong>（最基本、最重要、基础）：实现联网计算机之间的信息传输，将计算机联系起来，统一调配、控制、管理。</li>
+<li><strong>资源共享</strong>：资源可以是软件、数据、硬件。能够提供资源利用率。</li>
+<li><strong>分布式处理</strong>：利用空闲计算机资源，提高整个系统的利用率。</li>
+<li>提高可靠性：网络中的计算机可以通过网络互为替代机。</li>
+<li>负载均衡：将工作均衡分配给各台计算机。</li>
+</ol>
+<p>计算机网络的<strong>三大主要功能</strong>是前三条（即数据通信、资源共享、分布式处理）。</p>
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><ol>
+<li><p>按分布范围：广域网、城域网、局域网、个人区域网。</p>
+<ul>
+<li>广域网（WAN）：提供长距离通信，范围几十km～几千km，有时也称“远程网”。连接各节点交换机的链路一般为高速链路，通信容量大。</li>
+<li>城域网（MAN）：范围5～50km。多采用以太网技术，有时并入局域网范围讨论。</li>
+<li>局域网（LAN）：范围通常为直径几十m～几km的区域。在计算机的配置数量上没有太多限制。</li>
+<li>个人区域网（PAN）：范围直径越10m。利用无线技术，也常称为“无线个人区域网（WPAN）”。</li>
+</ul>
+<p>若中央处理器间隔非常近，则一般称“多处理器系统”，而不称为“计算机网络”。</p>
+<p><strong>分布范围不是区分<u>广域网</u>和<u>局域网</u>的关键，传输技术是。</strong></p>
+</li>
+<li><p>按<strong>传输技术</strong>：<strong>广播式网络</strong>、<strong>点对点网络</strong>。</p>
+<ul>
+<li>广播式网络：所有联网计算机都共享一个公共通信信道。一台计算机利用信道发送报文分组时，其他所有计算机都会收听到这个分组。计算机通过检查目的地址来决定是否接受该分组。<strong>局域网基本上都采用此技术；广域网中无线、卫星通信网络也采用此技术。</strong></li>
+<li>点对点网络：每条物理线路连接一对计算机。若通信的两主机间没有直接连线，则需要通过中间结点接收、存储和转发。<strong>广域网基本上都属于点对点网络。</strong></li>
+</ul>
+<p><strong>是否采用分组存储转发和路由选择机制是<u>点对点网络</u>和<u>广播式网络</u>的重要区别。</strong></p>
+</li>
+<li><p>按<strong>拓扑结构</strong>：总线形、星形、环形、网状。前三种多用于局域网，最后一种多用于广域网。</p>
+<ul>
+<li>总线形网络：单根传输线连接所有计算机。</li>
+<li>星形网络：每个终端都与中央设备单独相连。</li>
+<li>环形网络：所有计算机接口设备连成一个环，环可以是单环或双环，但<strong>环中信号是单向传输的</strong>。最典型例子是<strong>令牌环局域网</strong>。</li>
+<li>网状网络：每个结点至少有两条路径与其他结点相连，有规则型和非规则型两种。多用在局域网中。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>网络类型</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>总线形</td>
+<td>建网容易、增减节点方便、节省线路</td>
+<td>重负载时通信效率不高、总线任意一处对故障敏感</td>
+</tr>
+<tr>
+<td>星形</td>
+<td>便于集中控制和管理（端用户通信必经过中央设备）</td>
+<td>成本高、中心设备对故障敏感</td>
+</tr>
+<tr>
+<td>环形</td>
+<td>电缆长度短、无差错传输（点对点）</td>
+<td>可靠性差、故障诊断困难、结点调整困难</td>
+</tr>
+<tr>
+<td>网状</td>
+<td>可靠性高</td>
+<td>控制复杂、线路成本高</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>按使用者：公用网（公众网）、专用网。</p>
+</li>
+<li><p>按交换技术：电路交换网络、报文交换网络（存储–转发网络）、分组交换网络（包交换网络）。</p>
+<ul>
+<li>电路交换网络：分建立连接、传输数据、断开连接三个阶段。最典型例子是<strong>传统电话网络</strong>。</li>
+<li>报文交换网络（存储–转发网络）：用户数据加上辅助信息封装成报文；整个报文传送到相邻结点后再转发，直到目的结点。每个报文可以单独选择到达目的结点的路径。</li>
+<li>分组交换网络（包交换网络）：主流网络使用方案。先分块，再封装，然后存储–转发传输。主要特点是单个分组传送到相邻结点，存储后查找转发表转发到下一结点。现在的主流网络基本上都可视为分组交换网络。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>网络类型</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>电路交换</td>
+<td>数据直接传送、时延小</td>
+<td>线路利用率低、<br />不能充分利用线路容量、<br />不便于进行差错控制</td>
+</tr>
+<tr>
+<td>报文交换</td>
+<td>线路容量利用较为充分、<br />可以实现不同链路之间不同数据传输速率的转换、<br />可以实现格式转换、<br />可以实现一对多、多对一访问、<br />可以实现差错控制</td>
+<td>增大了资源开销（辅助信息导致的时空开销）、<br />增大了缓冲时延、<br />需要额外控制机制保证<strong>多个报文</strong>顺序、<br />缓冲区难以管理（接收方无法预知报文大小）</td>
+</tr>
+<tr>
+<td>分组交换</td>
+<td>同上，<br />并且缓冲易于管理、<br />包的平均时延更小、<br />网络占用的平均缓冲区更小</td>
+<td>资源开销大</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>按传输介质：有线网络、无线网络。</p>
+</li>
+</ol>
+<h4 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h4><ul>
+<li><p>带宽（bandwidth）：单位bps。表示网络的通信线路所能传输数据的能力，即最高<strong>数据传输速率</strong>。</p>
+</li>
+<li><p>时延（delay）：数据从网络或链路的一端传送到另一端所需的总时间。</p>
+<ul>
+<li>发送时延（传输时延）：将分组的比特推向链路所需时间。</li>
+<li>传播时延：电磁波在信道中传播的时间。</li>
+<li>处理时延：在交换结点为存储转发进行处理的时间。</li>
+<li>排队时延：在输出队列中排队等待转发的时间。</li>
+</ul>
+<p>后两者一般忽略不计。<strong>高速链路</strong>提高的仅是数据<strong>发送速率</strong>而非传播速率，减小了<strong>发送时延</strong>。</p>
+</li>
+</ul>
+<p>$$<br>\text{总时延}&#x3D;\text{发送时延}+\text{传播时延}+\text{处理时延}+\text{排队时延}<br>$$</p>
+<p>$$<br>\text{传播时延}&#x3D;\dfrac{\text{信道长度}}{\text{信道上的传播速率}}<br>$$</p>
+<p>$$<br>\text{发送时延}&#x3D;\dfrac{\text{分组(数据帧)长度}}{\text{数据传输速率(信道宽度)}}<br>$$</p>
+<p>​		如果是电路交换网络，还需要加上电路建立&#x2F;断开的时延。</p>
+<ul>
+<li>时延带宽积：又称以比特为单位的链路长度。指<strong>发送端发送的一个比特到达终点时，发送端已发出多少比特</strong>。</li>
+</ul>
+<p>$$<br>\text{时延带宽积}&#x3D;\text{传播时延}\times\text{信道带宽}<br>$$</p>
+<ul>
+<li>往返时延（RTT，Round-Trip Time）：指从发送端发送数据开始，到发送端收到来自接受端的确认为止所经历的时延。</li>
+<li>吞吐量（throughput）：单位时间内通过某个网络&#x2F;信道&#x2F;端口的数据量。受带宽限制。</li>
+<li>速率（speed）：也称数据传输速率、数据率、比特率，单位bps。最高值称带宽。</li>
+<li>信道利用率。</li>
+</ul>
+<p>$$<br>\text{信道利用率}&#x3D;\dfrac{\text{有数据通过的时间}}{\text{总时间}}<br>$$</p>
+<h3 id="计算机网络体系结构与参考模型"><a href="#计算机网络体系结构与参考模型" class="headerlink" title="计算机网络体系结构与参考模型"></a>计算机网络体系结构与参考模型</h3><h4 id="分层结构"><a href="#分层结构" class="headerlink" title="分层结构"></a>分层结构</h4><p>分层的基本原则：</p>
+<ol>
+<li>每层实现一种相对独立的功能，降低大系统复杂度。</li>
+<li>各层间界面自然清晰，易于理解，相互交流尽可能少。</li>
+<li>各层功能的精确定义独立于具体实现方法。</li>
+<li>保持下层对上层的独立性，上层单向使用下层服务。</li>
+<li>能促进标准化工作。</li>
+</ol>
+<p>计算机网络<strong>从低到高</strong>分为第1～n层。</p>
+<p>在计算机网络分层结构中，第n​层中的活动元素称为<strong>第n层实体</strong>。不同机器上的同一层称为<strong>对等层</strong>。同一层的实体称为<strong>对等实体</strong>。第n​层实体实现的服务为第n+1​层所利用，其中第n​层称<strong>服务提供者</strong>，第n+1​称<strong>服务用户</strong>。</p>
+<p>每个报文（协议数据单元，PDU）分两部分：服务数据单元（SDU）、协议控制信息（PCI）。第n​层前加“n–”。<br>$$<br>n\text{-SDU}+n\text{-PCI}&#x3D;(n-1)\text{-SDU}<br>$$<br>层次结构的含义：</p>
+<ol>
+<li>第n层的服务是其及其下各层提供服务的总和。</li>
+<li>最低层只提供服务，最高层面向用户提供服务，中间层是下一层的服务使用者，是上一层的服务提供者。</li>
+<li>上一层仅能通过<strong>相邻层</strong>间的接口使用下一层的服务，下一层提供的服务的实现细节对上一层透明。</li>
+<li>两主机通信时，<strong>对等层在逻辑上有一条直接信道</strong>，表现为不经过下层就把信息传送到对方。</li>
+</ol>
+<p><strong>分层的目标不包括定义功能执行的具体方法</strong>。</p>
+<h4 id="协议、接口、服务"><a href="#协议、接口、服务" class="headerlink" title="协议、接口、服务"></a>协议、接口、服务</h4><ul>
+<li><p>协议：全称网络协议（network protocol）。是控制两个或多个<strong>对等实体</strong>进行通信的规则的集合，是<strong>水平的</strong>。不对等实体间不存在协议。</p>
+</li>
+<li><p>接口（interface）：<strong>同一结点相邻两层</strong>间交换信息的连接点，是一个系统内部的规定。接口定义不能跨层。在典型接口上，同一结点相邻两层实体通过<strong>服务访问点</strong>（SAP，Service Access Point）进行交互。<strong>第n层SAP是第n+1层访问下一层服务的地方</strong>。</p>
+</li>
+<li><p>服务：下层<strong>为紧邻上层提供</strong>的功能调用，是垂直的。只有能够被上一层“看得见”的功能才称为服务。</p>
+<ul>
+<li><p>服务原语：OSI参考模型中上层使用下层服务时交换的命令。</p>
+<ol>
+<li>请求（request）：用户对提供者。</li>
+<li>指示（indication）：提供者对用户。</li>
+<li>响应（response）：用户对提供者，对应于指示。</li>
+<li>证实（confirmation）：提供者对用户，对应于请求。</li>
+</ol>
+<p>后两类称为应答。有应答服务包含全部四类原语；无应答服务仅有前两种。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>协议和服务的关系</strong>：</p>
+<ol>
+<li>只有本层协议实现，才能保证向上一层提供服务。</li>
+<li>下层协议对上层服务用户透明。</li>
+<li>协议是水平的，服务是垂直的。</li>
+</ol>
+<p>计算机网络提供<strong>服务的分类</strong>：</p>
+<ol>
+<li>面向连接服务、无连接服务。<ul>
+<li>面向连接服务：通信前双方必须先建立连接、分配相应资源，传输结束后释放连接和占用的资源。分连接建立、数据传输、连接释放三个阶段。<strong>TCP是面向连接服务协议</strong>。</li>
+<li>无连接服务：通信前双方不需要先建立连接，需要发送数据时直接发送。是一种<strong>不可靠的</strong>服务。称其“尽最大努力交付（best-effort delivery）”。<strong>IP、UDP是无连接服务协议</strong>。</li>
+</ul>
+</li>
+<li>可靠服务、不可靠服务。<ul>
+<li>可靠服务：网络具有检错、纠错、应答机制，能保证数据正确可靠地传送到目的地。</li>
+<li>不可靠服务：网络只是尽量正确可靠地传送，是尽力而为的服务。其网络正确性、可靠性由应用或用户来保障。</li>
+</ul>
+</li>
+<li>有应答服务、无应答服务。<ul>
+<li>有应答服务：接收方收到数据后向发送方发送相应应答。该应答由传输系统内部自动实现，而不由用户实现。<strong>文件传输服务是有应答服务</strong>。</li>
+<li>无应答服务：接收方不自动给出应答。应答需要由高层实现。<strong>WWW服务即是无应答的</strong>。</li>
+</ul>
+</li>
+</ol>
+<h4 id="ISO-x2F-OSI参考模型"><a href="#ISO-x2F-OSI参考模型" class="headerlink" title="ISO&#x2F;OSI参考模型"></a>ISO&#x2F;OSI参考模型</h4><p>七层。</p>
+<table>
+<thead>
+  <tr>
+    <th colspan="2">名称</th>
+    <th>PDU</th>
+    <th>任务/功能</th>
+    <th>典型协议<br>/标准<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="3">资源子网</td>
+    <td>应用层</td>
+    <td rowspan="3">数据</td>
+    <td>用户与网络的界面<br>为特定类型的网络应用提供访问参考模型环境的手段<br>最复杂、协议最多的一层</td>
+    <td>FTP(文件传送)<br>SMTP(电子邮件)<br>HTTP(万维网)</td>
+  </tr>
+  <tr>
+    <td>表示层</td>
+    <td>处理两通信系统中交换信息的表示方式<br>采用抽象的标准方法定义数据结构<br>采用标准的编码形式<br>数据压缩、加/解密</td>
+    <td>–</td>
+  </tr>
+  <tr>
+    <td>会话层</td>
+      <td>允许不同主机上各个进程间会话<br>为表示层实体/用户进程建立连接并有序传输数据，也称建立同步(SYN)<br>管理主机间会话进程(<strong><u>建立、管理、终止会话</u></strong>)<br>可以使用校验点恢复通信，实现数据同步</td>
+    <td>–</td>
+  </tr>
+  <tr>
+    <td colspan="2">传输层</td>
+    <td>报文段<br>(TCP)<br>/<br>用户数据报<br>(UDP)</td>
+      <td>为<strong><u>端到端连接</u></strong>提供<strong><u>可靠</u></strong>的传输服务<br><strong>流量控制</strong>、差错控制、服务质量、数据传输管理<br>端到端的应答、分组排序<br>具有分用、复用功能</td>
+    <td>TCP<br>UDP</td>
+  </tr>
+  <tr>
+    <td rowspan="3">通信子网</td>
+    <td>网络层<br>(/网际层<br>/IP层)</td>
+    <td>数据报</td>
+      <td>通信子网的运行控制<br>对<strong><u>分组</u></strong>的<strong><u>路由选择</u></strong><br><strong>流量控制</strong>、拥塞控制、差错控制、网际互联</td>
+    <td>IP，IPX，<br>ICMP，IGMP，<br>ARP，RARP，<br>OSPF</td>
+  </tr>
+  <tr>
+    <td>数据链路层</td>
+    <td>帧</td>
+      <td>将网络层传来的IP数据报组装成帧<br>成帧、差错控制、<strong>流量控制</strong>、传输管理(<strong><u>点到点</u></strong>)<br>(广播式)利用介质访问子层控制对共享信道的访问</td>
+    <td>SDLC<br>HDLC<br>PPP<br>STP<br>帧中继</td>
+  </tr>
+  <tr>
+    <td>物理层<br></td>
+    <td>比特</td>
+    <td>透明地传输原始比特流<br>规定电路接口参数<br>规定传输信号的意义和电气特征</td>
+    <td>EIA-232C<br>EIA/TIA RS-449<br>CCITT X.21</td>
+  </tr>
+</tbody>
+</table>
+各层数据传输的差别：
+
+<ul>
+<li>物理层实现比特流在传输介质之间的透明传输。</li>
+<li>数据链路层<strong>将有差错的物理线路变成无差错的数据链路</strong>，实现<strong>点到点</strong>的数据传输。</li>
+<li>网络层的主要功能是路由选择、拥塞控制、网际互联等，实现<strong>主机到主机</strong>的通信。</li>
+<li>传输层实现<strong>端到端</strong>的数据传输。</li>
+</ul>
+<p>从本质上说，<strong>通信子网</strong>为网络环境中的主机提供<strong>点到点</strong>的服务，<strong>传输层</strong>为网络中的主机提供<strong>端到端</strong>的通信。</p>
+<p><strong>关于数据封装问题：</strong></p>
+<p>除物理层外，其他层均为上层提交的数据加上首部，另外数据链路层还要再加上尾部。传输层将上层提交的数据分割为报文后提交给下层。物理层以比特流形式透明地传送帧。</p>
+<h4 id="TCP-x2F-IP模型"><a href="#TCP-x2F-IP模型" class="headerlink" title="TCP&#x2F;IP模型"></a>TCP&#x2F;IP模型</h4><p>事实上的国际标准。四层。</p>
+<table>
+<thead>
+  <tr>
+    <th>名称</th>
+    <th>OSI对应层</th>
+    <th>描述</th>
+    <th>典型协议/标准</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="3">应用层</td>
+    <td>应用层</td>
+      <td rowspan="3">(<strong><u>用户–用户</u></strong>)<br>包含所有高层协议</td>
+    <td rowspan="3">Telnet<br>FTP<br>DNS<br>SMTP<br>HTTP</td>
+  </tr>
+  <tr>
+    <td>表示层</td>
+  </tr>
+  <tr>
+    <td>会话层</td>
+  </tr>
+  <tr>
+    <td>传输层</td>
+    <td>传输层</td>
+      <td>(<strong><u>应用–应用</u></strong> / <strong><u>进程–进程</u></strong>)<br>使发送端和目的端主机对等实体进行通话</td>
+    <td>传输控制协议(TCP)：<br>面向连接的，可靠的，单位报文段<br>用户数据报协议(UDP)：<br>无连接的，不可靠的，单位用户数据报</td>
+  </tr>
+  <tr>
+    <td>网际层</td>
+    <td>网络层</td>
+      <td>(<strong><u>主机–主机</u></strong>)与网络层功能非常相似<br>将分组发往任何网络，并独立地选择合适路由，但<strong><u>不保证分组有序到达</u></strong>(由高层负责)<br>定义标准分组格式、协议</td>
+    <td>IP<br>(IPv4，IPv6)</td>
+  </tr>
+  <tr>
+    <td rowspan="2">网络接口层</td>
+    <td>数据链路层</td>
+    <td rowspan="2">(TCP/IP本身并未真正描述，仅指出主机必须使用某种协议连接网络，以便传递IP分组)<br>从主机或结点接收IP分组，并发送到指定物理网络上<br>物理网络既可以是局域网，也可以是公共数据网络</td>
+    <td rowspan="2">以太网、令牌环网、令牌总线网，<br>电话网、SDH、X.25、帧中继、ATM</td>
+  </tr>
+  <tr>
+    <td>物理层</td>
+  </tr>
+</tbody>
+</table>
+
+<p>IP协议是因特网中的核心协议。</p>
+<p>TCP&#x2F;IP为各种应用提供服务（everything on IP）；</p>
+<p>TCP&#x2F;IP允许IP协议在由各种网络构成的互联网上运行（IP over everything）。</p>
+<h4 id="两模型的比较"><a href="#两模型的比较" class="headerlink" title="两模型的比较"></a>两模型的比较</h4><p>相似：</p>
+<ol>
+<li>都采用分层体系结构，且分层功能大体相似。</li>
+<li>都是基于独立的协议栈概念。</li>
+<li>都可以解决异构网络的互联，实现不同计算机之间的通信。</li>
+</ol>
+<p>差异：</p>
+<ol>
+<li>OSI参考模型精确地定义了服务、协议、接口三个概念，与现代面向对象程序设计思想非常吻合；<br>TCP&#x2F;IP模型在这三个概念上没有明确区分。</li>
+<li>OSI参考模型产生于协议之前，不偏向于特定协议，通用性好；<br>TCP&#x2F;IP模型实际上是对已有协议的描述，不适合任何其他非TCP&#x2F;IP的协议栈。</li>
+<li>TCP&#x2F;IP模型在设计之初就考虑到多种异构网的互联问题，并将网际协议（IP）单独列为一个重要层次；<br>OSI参考模型在认识到IP的重要性后，在网络层中又划分出一个子层来完成类似功能。</li>
+<li>OSI参考模型在<strong>网络层</strong>支持<strong>无连接&#x2F;面向连接</strong>通信，但<strong>传输层</strong>仅有<strong>面向连接</strong>通信；<br>TCP&#x2F;IP模型认为<strong>可靠性是端到端的问题</strong>，在<strong>网际层</strong>仅有<strong>无连接</strong>通信模式，但<strong>传输层</strong>支持<strong>无连接&#x2F;面向连接</strong>模式。</li>
+</ol>
+<p>两种模型都不完美。</p>
+<h4 id="5层协议的体系结构模型"><a href="#5层协议的体系结构模型" class="headerlink" title="5层协议的体系结构模型"></a>5层协议的体系结构模型</h4><ul>
+<li>应用层<ul>
+<li>客户发起连接建立请求</li>
+<li>服务器接收连接建立请求</li>
+</ul>
+</li>
+<li>传输层</li>
+<li>网络层</li>
+<li>数据链路层</li>
+<li>物理层<ul>
+<li>连接因特网</li>
+</ul>
+</li>
+</ul>
+<h2 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h2><h3 id="通信基础"><a href="#通信基础" class="headerlink" title="通信基础"></a>通信基础</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p>通信的目的是传送信息。数据是传送信息的实体。信号是数据的电气或电磁表现、数据在传输过程中的存在形式。</p>
+<p>连续变化的数据&#x2F;信号称<strong>模拟数据&#x2F;信号</strong>，取值仅允许为有限几个离散值的数据&#x2F;信号称<strong>数字数据&#x2F;信号</strong>。</p>
+<p><strong>串行传输</strong>指逐比特按时间顺序传输（多用于远距离通信），<strong>并行传输</strong>指若干比特通过多条信道同时传输。</p>
+<p>（k进制）<strong>码元</strong>是用以表示一位k进制数字离散数值的固定时长的信号波形（数字脉冲），是数字通信中数字信号的计量单位。该时长称为码元宽度。</p>
+<p>数据通信是指数字计算机或其他数字终端之间的通信。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line"></span><br><span class="line">a[信源]</span><br><span class="line">b[变换器]</span><br><span class="line">c[信道]</span><br><span class="line">d[噪声源]</span><br><span class="line">e[反变换器]</span><br><span class="line">f[信宿]</span><br><span class="line"></span><br><span class="line">subgraph x[发送端]</span><br><span class="line">a--&gt;b</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">subgraph y[接收端]</span><br><span class="line">e--&gt;f</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">b--&gt;c--&gt;e</span><br><span class="line">d--&gt;c</span><br></pre></td></tr></table></figure>
+
+
+
+<p>（单向）通信系统模型：发送端[信源➡️变换器]➡️信道（⬅️噪声源）➡️接收端[反变换器➡️信宿]</p>
+<p>信道分类：</p>
+<ul>
+<li>按传输信号形式：模拟信道、数字信道。</li>
+<li>按传输介质：有线信道、无线信道。</li>
+</ul>
+<p>信道上传送的信号分<strong>基带信号</strong>和<strong>宽带信号</strong>。基带信号将数字信号直接用不同电压表示，然后直接送到<strong>数字信道</strong>上传输，称为<strong>基带传输</strong>。宽带信号将基带信号进行调制后形成频分复用信号，然后送到<strong>模拟信道</strong>上传输，称为<strong>宽带传输</strong>。</p>
+<p>三种通信方式：单向通信、半双工通信、全双工通信。</p>
+<ul>
+<li>单向通信：单方向通信，无反方向交互。一条信道。如无线电广播、电视广播。</li>
+<li>半双工通信：双方均可发送&#x2F;接收，但不能同时发送和接收信息。两条信道。</li>
+<li>全双工通信：双方可同时发送和接收信息。</li>
+</ul>
+<p><strong>速率</strong>也称<strong>数据率</strong>，表示单位时间内传输的数据量，可用<strong>码元传输速率</strong>和<strong>信息传输速率</strong>表示。</p>
+<ul>
+<li>码元传输速率（<strong>波特率</strong>&#x2F;<strong>调制速率</strong>&#x2F;<strong>波形速率</strong>&#x2F;<strong>符号速率</strong>）：单位时间内数字通信系统所传输的码元个数&#x2F;脉冲个数&#x2F;信号变化的次数。单位波特（Baud）。与进制数无关。</li>
+<li>信息传输速率（<strong>比特率</strong>&#x2F;<strong>信息速率</strong>）：单位时间内数字通信系统所传输的<strong>二进制</strong>码元个数（比特数）。单位比特每秒（bps）。</li>
+</ul>
+<p>信道的<strong>极限容量</strong>：信道的最高码元速率或极限信息传输速率。</p>
+<p><em>实际网络中常用带宽表示网络的通信线路所能传输数据的能力，即单位时间内从网络某一点到另一点所能通过的最高数据率，单位为bps。</em></p>
+<h4 id="奈奎斯特定理"><a href="#奈奎斯特定理" class="headerlink" title="奈奎斯特定理"></a>奈奎斯特定理</h4><h4 id="香农定理"><a href="#香农定理" class="headerlink" title="香农定理"></a>香农定理</h4><h2 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h2><h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2></div><div class="tags"><a href="/tags/计算机网络"><i class="fa fa-tag">计算机网络</i></a></div><div class="post-nav"><a class="pre" href="/2021/08/20/downgrading-macos-from-big-sur-to-catalina-for-macbook-pro-13-inches-2020-intel-with-data-migrated/">为MacBook Pro（13寸，2020，Intel处理器）进行系统降级并迁移数据（由Big Sur至Catalina）</a><a class="next" href="/2020/08/21/eclipse-java-installation-chinese-localization-and-configuration-on-manjaro/">Manjaro上的Eclipse (Java)安装与配置(包括汉化)</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://y2-whyto.github.io"/></form></div><div class="widget"><div class="author-info"><a class="info-avatar" href="/about/" title="关于"><img class="nofancybox" src="/img/avatar.png"/></a><p>To be a better man.</p><a class="info-icon" href="https://twitter.com/username" title="Twitter" target="_blank" style="margin-inline:5px"> <i class="fa fa-twitter-square" style="margin-inline:5px"></i></a><a class="info-icon" href="mailto:admin@domain.com" title="Email" target="_blank" style="margin-inline:5px"> <i class="fa fa-envelope-square" style="margin-inline:5px"></i></a><a class="info-icon" href="https://github.com/username" title="Github" target="_blank" style="margin-inline:5px"> <i class="fa fa-github-square" style="margin-inline:5px"></i></a><a class="info-icon" href="/atom.xml" title="RSS" target="_blank" style="margin-inline:5px"> <i class="fa fa-rss-square" style="margin-inline:5px"></i></a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android%E5%88%B7%E6%9C%BA/">Android刷机</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Chromium-OS/">Chromium OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Linux/">Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Linux/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/">软件使用</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/%E6%9C%AA%E5%88%86%E7%B1%BB/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/">网络相关</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/macOS/">macOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/">网络相关</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%8D%B8%E8%BD%BD/">软件卸载</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/JDK/" style="font-size: 15px;">JDK</a> <a href="/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" style="font-size: 15px;">环境变量</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/%E5%8D%B8%E8%BD%BD/" style="font-size: 15px;">卸载</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/MIUI/" style="font-size: 15px;">MIUI</a> <a href="/tags/Pixel-Experience/" style="font-size: 15px;">Pixel Experience</a> <a href="/tags/%E5%88%B7%E6%9C%BA/" style="font-size: 15px;">刷机</a> <a href="/tags/%E5%AE%89%E5%8D%93/" style="font-size: 15px;">安卓</a> <a href="/tags/%E5%B0%8F%E7%B1%B3/" style="font-size: 15px;">小米</a> <a href="/tags/Connectify/" style="font-size: 15px;">Connectify</a> <a href="/tags/SSTap/" style="font-size: 15px;">SSTap</a> <a href="/tags/VPN/" style="font-size: 15px;">VPN</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 15px;">网络</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB/" style="font-size: 15px;">网络共享</a> <a href="/tags/7572/" style="font-size: 15px;">7572</a> <a href="/tags/Dell/" style="font-size: 15px;">Dell</a> <a href="/tags/Intel/" style="font-size: 15px;">Intel</a> <a href="/tags/USB/" style="font-size: 15px;">USB</a> <a href="/tags/Windows-7/" style="font-size: 15px;">Windows 7</a> <a href="/tags/%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F/" style="font-size: 15px;">驱动程序</a> <a href="/tags/Chrome-OS/" style="font-size: 15px;">Chrome OS</a> <a href="/tags/Chromefy/" style="font-size: 15px;">Chromefy</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Arch-Linux/" style="font-size: 15px;">Arch Linux</a> <a href="/tags/Manjaro/" style="font-size: 15px;">Manjaro</a> <a href="/tags/OS/" style="font-size: 15px;">OS</a> <a href="/tags/%E9%85%8D%E7%BD%AE/" style="font-size: 15px;">配置</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 15px;">计算机网络</a> <a href="/tags/Eclipse/" style="font-size: 15px;">Eclipse</a> <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 15px;">安装</a> <a href="/tags/%E6%B1%89%E5%8C%96/" style="font-size: 15px;">汉化</a> <a href="/tags/macOS/" style="font-size: 15px;">macOS</a> <a href="/tags/%E9%99%8D%E7%BA%A7/" style="font-size: 15px;">降级</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" style="font-size: 15px;">数据迁移</a> <a href="/tags/MacBook-Pro/" style="font-size: 15px;">MacBook Pro</a> <a href="/tags/Big-Sur/" style="font-size: 15px;">Big Sur</a> <a href="/tags/Catalina/" style="font-size: 15px;">Catalina</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/08/20/downgrading-macos-from-big-sur-to-catalina-for-macbook-pro-13-inches-2020-intel-with-data-migrated/">为MacBook Pro（13寸，2020，Intel处理器）进行系统降级并迁移数据（由Big Sur至Catalina）</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/25/computer-networks/">计算机网络 (更新中)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/21/eclipse-java-installation-chinese-localization-and-configuration-on-manjaro/">Manjaro上的Eclipse (Java)安装与配置(包括汉化)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/17/personal-manjaro-arch-linux-configuration-record/">个人Manjaro配置记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/28/install-windows-7-64-bit-on-dell-inspiron-7572/">为Dell Inspiron 7572安装Windows 7 (64位)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/08/installing-chromium-os-on-pc/">为PC安装Chromium OS</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/sharing-vpn-connection-through-windows-hotspot/">通过Windows移动热点分享VPN连接</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/30/flashing-pixel-experience-for-xiaomi-mi-8/">为小米8刷入Pixel Experience</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/29/configuring-environment-variables-for-jdk-11/">JDK 11的环境变量配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/29/how-to-completely-uninstall-java/">如何完全卸载Java</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2023 <a href="/." rel="nofollow">Whyto的笔记存放站.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/latest/jquery.fancybox.min.js"></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0"></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/latest/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.0"><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" async></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>

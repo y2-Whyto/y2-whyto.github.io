@@ -1,0 +1,288 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>个人Manjaro配置记录 | Whyto的笔记存放站</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/latest/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/latest/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/latest/grids-responsive-min.min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/latest/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="//lib.baomitu.com/clipboard.js/latest/clipboard.min.js"></script><script type="text/javascript" src="//lib.baomitu.com/toastr.js/latest/toastr.min.js"></script><link rel="stylesheet" href="//lib.baomitu.com/toastr.js/latest/toastr.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">个人Manjaro配置记录</h1><a id="logo" href="/.">Whyto的笔记存放站</a><p class="description">一个菜鸡的备忘录</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">个人Manjaro配置记录</h1><div class="post-meta">2020-08-17<span> | </span><span class="category"><a href="/categories/Linux/">Linux</a><a href="/categories/Linux/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a><a href="/categories/Linux/%E6%9C%AA%E5%88%86%E7%B1%BB/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/">网络相关</a></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">个人配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E9%95%9C%E5%83%8F%E4%B8%8E%E7%83%A7%E5%BD%95USB"><span class="toc-number">2.</span> <span class="toc-text">下载镜像与烧录USB</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDManjaro%E9%95%9C%E5%83%8F"><span class="toc-number">2.1.</span> <span class="toc-text">下载Manjaro镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%86Manjaro%E9%95%9C%E5%83%8F%E7%83%A7%E5%BD%95%E8%87%B3U%E7%9B%98"><span class="toc-number">2.2.</span> <span class="toc-text">将Manjaro镜像烧录至U盘</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Manjaro"><span class="toc-number">3.</span> <span class="toc-text">安装Manjaro</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">3.1.</span> <span class="toc-text">安装前的准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Precautions"><span class="toc-number">3.2.</span> <span class="toc-text">*Precautions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E6%96%B0%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%95%B4%E7%A1%AC%E7%9B%98%E7%A9%BA%E9%97%B4"><span class="toc-number">3.3.</span> <span class="toc-text">*为新系统调整硬盘空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E6%95%B4BIOS%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.4.</span> <span class="toc-text">调整BIOS设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%83%A7%E5%BD%95%E5%A5%BD%E7%9A%84U%E7%9B%98%E5%AE%89%E8%A3%85Manjaro"><span class="toc-number">3.5.</span> <span class="toc-text">使用烧录好的U盘安装Manjaro</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%B9%8B%E5%90%8E%E7%9A%84Manjaro%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B"><span class="toc-number">4.</span> <span class="toc-text">安装之后的Manjaro配置过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HiDPI"><span class="toc-number">4.1.</span> <span class="toc-text">HiDPI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%BD%AF%E4%BB%B6%E6%BA%90"><span class="toc-number">4.2.</span> <span class="toc-text">配置软件源</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2archlinux%E9%95%9C%E5%83%8F%E6%BA%90"><span class="toc-number">4.2.1.</span> <span class="toc-text">更换archlinux镜像源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2archlinuxcn%E9%95%9C%E5%83%8F%E6%BA%90"><span class="toc-number">4.2.2.</span> <span class="toc-text">更换archlinuxcn镜像源</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F"><span class="toc-number">4.3.</span> <span class="toc-text">更新系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E9%A9%B1%E5%8A%A8%E4%B8%8E%E8%AF%AD%E8%A8%80%E5%8C%85"><span class="toc-number">4.4.</span> <span class="toc-text">系统驱动与语言包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BAKonsole%E9%85%8D%E7%BD%AE%E6%96%B9%E6%A1%88"><span class="toc-number">4.5.</span> <span class="toc-text">个人Konsole配置方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2Zsh"><span class="toc-number">4.5.1.</span> <span class="toc-text">*更换Zsh</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IME"><span class="toc-number">4.6.</span> <span class="toc-text">IME</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Rime"><span class="toc-number">4.6.1.</span> <span class="toc-text">Rime</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E8%AF%AD-ibus-anthy"><span class="toc-number">4.6.2.</span> <span class="toc-text">日语(ibus-anthy)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91"><span class="toc-number">4.7.</span> <span class="toc-text">科学上网</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E5%85%85"><span class="toc-number">4.7.1.</span> <span class="toc-text">补充</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85yay%E5%B9%B6%E8%A7%A3%E5%86%B3yay%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E9%97%AE%E9%A2%98"><span class="toc-number">4.7.1.1.</span> <span class="toc-text">安装yay并解决yay下载速度问题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chrome"><span class="toc-number">4.8.</span> <span class="toc-text">Chrome</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%8E%E5%8C%96"><span class="toc-number">4.9.</span> <span class="toc-text">美化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E6%A0%87%E4%B8%8E%E5%85%89%E6%A0%87"><span class="toc-number">4.9.1.</span> <span class="toc-text">图标与光标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Plasma%E9%83%A8%E4%BB%B6"><span class="toc-number">4.9.2.</span> <span class="toc-text">Plasma部件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E4%BD%93"><span class="toc-number">4.9.3.</span> <span class="toc-text">字体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%BE%8E%E5%8C%96"><span class="toc-number">4.9.4.</span> <span class="toc-text">其他美化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9F%B3%E4%B9%90"><span class="toc-number">4.10.</span> <span class="toc-text">音乐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F"><span class="toc-number">4.11.</span> <span class="toc-text">游戏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%9D%82%E9%A1%B9"><span class="toc-number">4.12.</span> <span class="toc-text">其他杂项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%90%8E%E6%80%A5%E6%95%91%E6%B1%87%E6%80%BB"><span class="toc-number">5.</span> <span class="toc-text">*事后急救汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%AF%E6%95%91grub"><span class="toc-number">5.1.</span> <span class="toc-text">拯救grub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E6%8D%9F%E6%89%A9%E5%A4%A7%E5%88%86%E5%8C%BA%E7%A9%BA%E9%97%B4-%E9%9C%80%E8%A6%81Windows%E7%B3%BB%E7%BB%9F"><span class="toc-number">5.2.</span> <span class="toc-text">无损扩大分区空间(需要Windows系统)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%80%E9%9C%80%E5%B7%A5%E5%85%B7"><span class="toc-number">5.2.1.</span> <span class="toc-text">所需工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-number">5.2.2.</span> <span class="toc-text">步骤</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AA%E5%B0%BD%E4%BA%8B%E5%AE%9C"><span class="toc-number">6.</span> <span class="toc-text">未尽事宜</span></a></li></ol></div></div><div class="post-content"><blockquote>
+<p>由于本文是个人配置记录，因此暂时略去了相关介绍内容，只关注具体的Manjaro下载安装与配置过程。</p>
+</blockquote>
+<blockquote>
+<p>下列内容中标注星号(*)的内容可以根据实际需求跳过。</p>
+</blockquote>
+<h2 id="个人配置"><a href="#个人配置" class="headerlink" title="个人配置"></a>个人配置</h2><p>Dell Inspiron 7572 (15.6寸)</p>
+<p>操作系统：Arch Linux<br>KDE Plasma版本：5.19.4<br>KDE框架版本：5.72.0<br>Qt版本：5.15.0<br>内核版本：5.6.15-1-MANJARO<br>操作系统类型：64位<br>处理器：8 × Intel® Core&amp;#x2122; i7-8550U CPU @ 1.80GHz<br>内存：15.5 GiB内存<br>图形处理器：Mesa Intel® UHD Graphics 620</p>
+<p>上述内容来自安装并配置完成Manjaro之后的系统信息页面。其实图形处理器还有Nvidia GeForce MX150 (4GB显存)。</p>
+<p>显然本人安装的是KDE版本。</p>
+<h2 id="下载镜像与烧录USB"><a href="#下载镜像与烧录USB" class="headerlink" title="下载镜像与烧录USB"></a>下载镜像与烧录USB</h2><h3 id="下载Manjaro镜像"><a href="#下载Manjaro镜像" class="headerlink" title="下载Manjaro镜像"></a>下载Manjaro镜像</h3><p>个人从Manjaro官网下载了<a target="_blank" rel="noopener" href="https://manjaro.org/downloads/official/kde/">KDE Plasma版本</a>的Manjaro镜像。</p>
+<p><em>使用<a target="_blank" rel="noopener" href="https://www.qbittorrent.org/">qBittorrent</a>搭配.torrent文件以获得更佳下载速度。</em></p>
+<h3 id="将Manjaro镜像烧录至U盘"><a href="#将Manjaro镜像烧录至U盘" class="headerlink" title="将Manjaro镜像烧录至U盘"></a>将Manjaro镜像烧录至U盘</h3><p>下载.iso镜像之后，对于Windows系统用户，使用<a target="_blank" rel="noopener" href="https://rufus.ie/">Rufus</a>烧录U盘设备；对于Linux系统用户，使用dd命令进行烧录，参考<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/177a78770d0a">此页面</a>【<a target="_blank" rel="noopener" href="https://web.archive.org/web/20200809132918if_/https://www.jianshu.com/p/177a78770d0a">页面存档</a>】。</p>
+<blockquote>
+<p><strong>对于UEFI启动设备，直接将.iso文件的内容拷贝至U盘是无效的。</strong></p>
+</blockquote>
+<h2 id="安装Manjaro"><a href="#安装Manjaro" class="headerlink" title="安装Manjaro"></a>安装Manjaro</h2><h3 id="安装前的准备工作"><a href="#安装前的准备工作" class="headerlink" title="安装前的准备工作"></a>安装前的准备工作</h3><blockquote>
+<p><strong>数据第一。进行一切涉及系统与数据的操作之前，一定要确保重要数据的安全，因此如果无法保证操作的安全性一定要先进行数据备份。</strong></p>
+</blockquote>
+<h3 id="Precautions"><a href="#Precautions" class="headerlink" title="*Precautions"></a>*Precautions</h3><ul>
+<li>用于安装回Windows系统的PE急救U盘。个人使用<a target="_blank" rel="noopener" href="http://www.wepe.com.cn/">wepe</a>。</li>
+<li>其他系统的(安装)镜像。</li>
+<li>在进行安装之前备份现有数据到外置存储设备，如移动硬盘等。</li>
+<li>制作当前系统的快照等其他备份手段。</li>
+</ul>
+<h3 id="为新系统调整硬盘空间"><a href="#为新系统调整硬盘空间" class="headerlink" title="*为新系统调整硬盘空间"></a>*为新系统调整硬盘空间</h3><p>使用<a target="_blank" rel="noopener" href="https://www.disktool.cn/download.html">傲梅分区工具</a>进行分区调整，为新系统空出使用空间，个人推荐至少50G (包括swap，EFI和根目录)；实际是the more the better (尤其SSD，分区可用空间越小对硬盘损伤越大)。</p>
+<h3 id="调整BIOS设置"><a href="#调整BIOS设置" class="headerlink" title="调整BIOS设置"></a>调整BIOS设置</h3><ul>
+<li>关闭Secure Boot。</li>
+<li>将SATA设置从Raid On调整为AHCI。<br>(此设置影响固态硬盘读取，前者情况下Linux系统无法正常检测固态硬盘)</li>
+<li>应用并退出。</li>
+</ul>
+<h3 id="使用烧录好的U盘安装Manjaro"><a href="#使用烧录好的U盘安装Manjaro" class="headerlink" title="使用烧录好的U盘安装Manjaro"></a>使用烧录好的U盘安装Manjaro</h3><p>Manjaro实时系统中，root密码为<code>manjaro</code>。</p>
+<p>插入烧录好的U盘，按F12进入启动设备列表，进入U盘启动项。在进入Live USB之前，先……</p>
+<ul>
+<li>将语言设置为“中文”。</li>
+<li>将时区设置为“Asia, Shanghai”。</li>
+<li>将驱动设置为“Nonfree”。</li>
+</ul>
+<p>接下来就可以选择启动Manjaro实时系统了。进入系统之后关闭欢迎窗口，有条件的话连接网络，之后选择安装Manjaro，进行安装操作。</p>
+<p>分盘时如果不存在EFI启动分区，则需要分出一个fat32分区，挂载&#x2F;boot&#x2F;efi，之后再分出swap分区和根目录即可，其中swap分区据说要和内存大小相近。</p>
+<p>之后进行安装操作，等待结束之后重启计算机。</p>
+<h2 id="安装之后的Manjaro配置过程"><a href="#安装之后的Manjaro配置过程" class="headerlink" title="安装之后的Manjaro配置过程"></a>安装之后的Manjaro配置过程</h2><p>Manjaro基于Arch Linux，使用<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">pacman</a>管理软件包。常用命令见<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ea651cdc5530">此</a>(安装+卸载)和<a target="_blank" rel="noopener" href="https://blog.csdn.net/liaoshengshi/article/details/40024749">此</a>(卸载)。</p>
+<h3 id="HiDPI"><a href="#HiDPI" class="headerlink" title="HiDPI"></a>HiDPI</h3><p>多数HiDPI可以通过“系统设置→硬件&gt;显示和监控→显示配置→全局缩放率”设置为125%完成，包括FireFox。</p>
+<p>然而ThunderBird依然需要单独配置。about:config的进入方式为“ThunderBird→首选项→高级→常规→高级配置&gt;配置编辑器→layout.css.devPixelsPerPx”设置为1.25。</p>
+<h3 id="配置软件源"><a href="#配置软件源" class="headerlink" title="配置软件源"></a>配置软件源</h3><p>软件源配置简直就是一劳永逸的事情。个人使用了清华的archlinux和archlinuxcn的镜像源，参考<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">清华镜像源使用帮助</a>，<a target="_blank" rel="noopener" href="https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/">archlinuxcn官方使用帮助</a>和<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">archlinux官方的Mirrors维基页面</a>。</p>
+<p>更换源之后需要下载keyring。使用以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syyu</span><br></pre></td></tr></table></figure>
+
+<p>当然，这里有必要提一句：<strong>archlinuxcn官方称不建议Arch Linux衍生发行版用户使用该源，并不会对由此造成的问题进行解决或负责。</strong>见FAQ部分，以下为原文：</p>
+<blockquote>
+<p>Q: 我是 Manjaro 用户，我可以使用 [archlinuxcn] 仓库吗？<br>A: 不建议这样做。[archlinuxcn] 仓库只支持 Arch Linux，在衍生发行版上使用可能出现问题。如果您在非 Arch Linux 系统上使用 [archlinuxcn] 仓库遇到了问题，请不要将问题报告给我们。</p>
+<p><em>——2020年8月9日22.58引自<a target="_blank" rel="noopener" href="https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/%E7%9A%84FAQ%E7%AC%AC%E4%B8%89%E6%9D%A1%E3%80%82">https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/的FAQ第三条。</a></em></p>
+</blockquote>
+<p>然而我选择无视这个提醒……(:P)我们继续。</p>
+<h4 id="更换archlinux镜像源"><a href="#更换archlinux镜像源" class="headerlink" title="更换archlinux镜像源"></a>更换archlinux镜像源</h4><p>在终端中运行以下内容：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman-mirrors -i -c China -m rank</span><br></pre></td></tr></table></figure>
+
+<p>之后选择清华源选项即可。</p>
+<h4 id="更换archlinuxcn镜像源"><a href="#更换archlinuxcn镜像源" class="headerlink" title="更换archlinuxcn镜像源"></a>更换archlinuxcn镜像源</h4><p>在&#x2F;etc&#x2F;pacman.conf的文件末尾添加以下内容：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">[archlinuxcn]</span></span><br><span class="line"><span class="attr">SigLevel</span> = <span class="string">Optional TrustedOnly</span></span><br><span class="line"><span class="attr">Server</span> = <span class="string">https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch</span></span><br></pre></td></tr></table></figure>
+
+<p>接下来运行以下命令来安装keyring。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Sy archlinuxcn-keyring</span><br></pre></td></tr></table></figure>
+
+<p>运行以下命令获取镜像源列表。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S archlinuxcn-mirrorlist-git</span><br></pre></td></tr></table></figure>
+
+<h3 id="更新系统"><a href="#更新系统" class="headerlink" title="更新系统"></a>更新系统</h3><p>一旦配置好软件源之后，二话不说，运行以下命令更新系统和软件。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syu</span><br></pre></td></tr></table></figure>
+
+<h3 id="系统驱动与语言包"><a href="#系统驱动与语言包" class="headerlink" title="系统驱动与语言包"></a>系统驱动与语言包</h3><p>个人选择使用闭源驱动(毕竟稳定性摆着)。</p>
+<p>打开“系统设置”，在“Manjaro”分类进入“硬件设定”选项，选择“Auto Install Proprietary Driver”。</p>
+<p>在“Manjaro”分类进入“语言包”选项，在“可用的语言包”选项卡点击“已安装的语言包”(可能是官方翻译有误……)。</p>
+<h3 id="个人Konsole配置方案"><a href="#个人Konsole配置方案" class="headerlink" title="个人Konsole配置方案"></a>个人Konsole配置方案</h3><p>外观：白底黑字，模糊背景，透明度30%，字体Menlo 14pt。</p>
+<h4 id="更换Zsh"><a href="#更换Zsh" class="headerlink" title="*更换Zsh"></a>*更换Zsh</h4><p>参考了<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e8f976447506">此页面</a>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy zsh</span><br><span class="line">sudo nano /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<p>将指定用户的shell路径替换为<code>/usr/bin/zsh</code>，个人使用默认主题。</p>
+<h3 id="IME"><a href="#IME" class="headerlink" title="IME"></a>IME</h3><h4 id="Rime"><a href="#Rime" class="headerlink" title="Rime"></a>Rime</h4><p><strong>No Sogou。</strong></p>
+<p>本来是准备使用搜狗的，但是一想起来搜狗那个尿性，我还是决定拾起Rime。</p>
+<p>安装IBus-Rime，并通过“东风破”安装输入方案，使用如下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy ibus-rime</span><br><span class="line">curl -fsSL https://git.io/rime-install | bash</span><br></pre></td></tr></table></figure>
+
+<p>接下来需要配置IBus，本部分参考了<a target="_blank" rel="noopener" href="https://eonun.com/2019/10/19/IBus-Rime%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">此页面</a>和<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Rime_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">Arch Linux官方的Rime维基页面</a>。</p>
+<p>使用如下命令分别编辑<code>~/.bashrc</code>和<code>~/.xprofile</code>：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nano ~/.bashrc</span><br><span class="line">nano ~/.xprofile</span><br></pre></td></tr></table></figure>
+
+<p>向其中加入如下配置：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">export</span> <span class="string">GTK_IM_MODULE=ibus</span></span><br><span class="line"><span class="attr">export</span> <span class="string">XMODIFIERS=@im=ibus</span></span><br><span class="line"><span class="attr">export</span> <span class="string">QT_IM_MODULE=ibus</span></span><br><span class="line"><span class="attr">ibus-daemon</span> <span class="string">-x -d</span></span><br></pre></td></tr></table></figure>
+
+<p>保存并退出，重启计算机。IBus将自动运行。此时可以在IBus首选项中添加Rime了。</p>
+<p>Linux下的IBus-Rime不支持更换皮肤。如果需要对Rime进行定制，可以参考<a target="_blank" rel="noopener" href="https://github.com/rime/home/wiki">Rime官方维基页面</a>。我后续也<strong>可能</strong>整理一份相对“简化”的Rime笔记(虽然本人并没有切身定制过..本来想自己定制结果看了一夜定制指南结果因为感觉太难所以放弃了orz)。个人发现并在使用中的现成的定制指南，来源见<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000005754706">此</a>【<a target="_blank" rel="noopener" href="https://web.archive.org/web/20200809150957/https://segmentfault.com/a/1190000005754706">页面存档</a>】。</p>
+<h4 id="日语-ibus-anthy"><a href="#日语-ibus-anthy" class="headerlink" title="日语(ibus-anthy)"></a>日语(ibus-anthy)</h4><p>使用如下命令安装：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy ibus-anthy</span><br></pre></td></tr></table></figure>
+
+<p>如果之前配置都做完了，那么安装并重启之后，在IBus中添加即可使用。</p>
+<h3 id="科学上网"><a href="#科学上网" class="headerlink" title="科学上网"></a>科学上网</h3><p>由于之前尝试系统时无意中发现了一个好用的软件——<a target="_blank" rel="noopener" href="https://qv2ray.net/">Qv2ray</a>【<a target="_blank" rel="noopener" href="https://github.com/Qv2ray/Qv2ray">Github页面</a>】，所以现在我已经抛弃了过时的<a target="_blank" rel="noopener" href="https://github.com/qingshuisiyuan/electron-ssr-backup">electron-SSR</a>，选择了这个all in one的软件(本体支持v2ray，安装相应插件之后支持SSR，SS，Trojan等，插件安装参考<a target="_blank" rel="noopener" href="https://qv2ray.net/plugins/usage.html">官方指南</a>)。</p>
+<p>这里顺便记录一下插件的安装目录为<code>~/.config/qv2ray/plugins/</code></p>
+<p>安装使用如下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy qv2ray</span><br></pre></td></tr></table></figure>
+
+<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p>经过实践检验，实际使用的时候代理这一部分有很多坑，几乎是用一款应用程序需要上网查找一次解决方案。因此特整理于此。本方法中使用了相对使用简单的<a target="_blank" rel="noopener" href="https://github.com/rofl0r/proxychains-ng">proxychains_ng</a>。</p>
+<p>首先要在Qv2ray中开启“系统代理”：在托盘上右键→“系统代理”→“启用系统代理”。</p>
+<p>其次是要关注Qv2ray首选项中“入站设置”的监听地址和端口。</p>
+<p>安装proxychains_ng：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy proxychains</span><br></pre></td></tr></table></figure>
+
+<p>安装之后修改配置文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/proxychains.conf</span><br></pre></td></tr></table></figure>
+
+<p>在配置文件最后，将默认的socks4配置注释掉，添加Qv2ray的socks5监听设置，最后的效果如下(Qv2ray的默认socks5监听设置为socks5:&#x2F;&#x2F;127.0.0.1:1089)：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">[ProxyList]</span></span><br><span class="line"><span class="comment"># add proxy here ...</span></span><br><span class="line"><span class="comment"># meanwile</span></span><br><span class="line"><span class="comment"># defaults set to &quot;tor&quot;</span></span><br><span class="line"><span class="comment"># socks4 	127.0.0.1 9050</span></span><br><span class="line"><span class="attr">socks5</span> 	<span class="string">127.0.0.1 1089</span></span><br></pre></td></tr></table></figure>
+
+<p>然而保存之后再使用<code>proxychains</code>运行yay，curl等依然会出现无法下载或404的错误。这时，收到<a target="_blank" rel="noopener" href="https://github.com/Qv2ray/Qv2ray/issues/717">该页面</a>启发，打开Qv2ray入站设置的“嗅探”选项，即可正常使用，原因未知。方法：打开Qv2ray首选项，在“入站设置”选项卡勾选“SOCKS设置”与“HTTP设置”下的“嗅探”选框，“确定”保存。</p>
+<p>之后需要使用时，输入如下命令(以<code>makepkg</code>为例)：(<code>-q</code>选项可以屏蔽proxychains输出，建议选用)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">proxychains -q makepkg -si</span><br></pre></td></tr></table></figure>
+
+<p>另外设置环境变量、git的代理有专门的命令，参考<a target="_blank" rel="noopener" href="https://qv2ray.net/getting-started/step4.html">Qv2ray官方指南</a>和<a target="_blank" rel="noopener" href="https://gist.github.com/laispace/666dd7b27e9116faece6">该页面</a>。归纳大致如下：</p>
+<p>设置环境变量(未开启身份验证时)：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">export</span> <span class="string">HTTP_PROXY=&quot;http://127.0.0.1:8889&quot;</span></span><br><span class="line"><span class="attr">export</span> <span class="string">HTTPS_PROXY=&quot;http://127.0.0.1:8889&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>设置git代理(未开启身份验证时)：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:8889</span><br><span class="line">git config --global https.proxy http://127.0.0.1:8889</span><br></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy &#x27;socks5://127.0.0.1:1089&#x27;</span><br><span class="line">git config --global https.proxy &#x27;socks5://127.0.0.1:1089&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>顺便说句，网上的配置curl啊，makepkg啊的代理设置教程<strong>根本不管用</strong>(当然也有可能是我<strong>本人太笨</strong>)，所以还是老老实实用了proxychains..</p>
+<h5 id="安装yay并解决yay下载速度问题"><a href="#安装yay并解决yay下载速度问题" class="headerlink" title="安装yay并解决yay下载速度问题"></a>安装yay并解决yay下载速度问题</h5><p>参考了<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/42287487">该页面</a>和<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/338022694">该页面</a>。</p>
+<p>使用如下代码安装yay：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://aur.archlinux.org/yay.git</span><br><span class="line">cd yay</span><br><span class="line">makepkg -si</span><br></pre></td></tr></table></figure>
+
+<p>使用polipo全局代理：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yay -S polipo</span><br><span class="line">sudo cp /etc/polipo/config.sample /etc/polipo/config</span><br><span class="line">sudo vim /etc/polipo/config</span><br></pre></td></tr></table></figure>
+
+<p>取消注释并改写为以下两行：(数值使用了Qv2ray的socks5端口)</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">socksParentProxy</span> = <span class="string">&quot;127.0.0.1:1089&quot;</span></span><br><span class="line"><span class="attr">socksProxyType</span> = <span class="string">socks5</span></span><br></pre></td></tr></table></figure>
+
+<p>使用时，用以下命令开启polipo，之后再使用<code>yay</code>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start polipo</span><br></pre></td></tr></table></figure>
+
+<p>关闭polipo：(将<code>stop</code>替换为<code>disable</code>以禁用polipo)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop polipo</span><br></pre></td></tr></table></figure>
+
+<h3 id="Chrome"><a href="#Chrome" class="headerlink" title="Chrome"></a>Chrome</h3><p>按顺序，在前面都配置完成之后再安装Chrome，这样就可以登录Google帐号同步了。</p>
+<p>安装使用如下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy google-chrome</span><br></pre></td></tr></table></figure>
+
+<h3 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h3><blockquote>
+<p><em><strong>搞了这么多次Linux系统安装，折腾来折腾去，总结出两点不能碰的坑：一个是wine，一个就是美化……</strong></em></p>
+<p><em>话虽如此..我还是折腾了起来，并且乐此不疲，真是可悲orz</em></p>
+</blockquote>
+<p>美化过程部分参考了<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/89847601">该页面</a>。</p>
+<h4 id="图标与光标"><a href="#图标与光标" class="headerlink" title="图标与光标"></a>图标与光标</h4><p>个人并没有更换系统图标，使用的是预装的“微风2”。光标使用的Adwaita。</p>
+<h4 id="Plasma部件"><a href="#Plasma部件" class="headerlink" title="Plasma部件"></a>Plasma部件</h4><p>内置部件看情况添加，不再赘述。</p>
+<p>额外安装的Plasma部件有：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://store.kde.org/p/998895">Netspeed Widget</a> by HessiJames</li>
+<li><a target="_blank" rel="noopener" href="https://store.kde.org/p/1364064">Launchpad Plasma</a> by adhe</li>
+<li><a target="_blank" rel="noopener" href="https://store.kde.org/p/1262649">Mac OSX Inline Battery</a> by polunom</li>
+<li><a target="_blank" rel="noopener" href="https://store.kde.org/p/1274218">Window Title Applet</a> by Psifidotos</li>
+<li><a target="_blank" rel="noopener" href="https://store.kde.org/p/1274975">Window AppMenu Applet</a> by Psifidotos (必须手动安装，参考store页面)</li>
+</ul>
+<p>另外安装了<a target="_blank" rel="noopener" href="https://github.com/IsoaSFlus/kcm-colorful">kcm-colorful</a>和<a target="_blank" rel="noopener" href="https://github.com/alex47/BreezeBlurred">BreezeBlurred</a>，使窗口和菜单栏部分模糊透明。使用如下命令进行安装。</p>
+<p>首先安装kcm-colorful，使用如下命令(需要提前添加archlinuxcn源)：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S kcm-colorful-git</span><br></pre></td></tr></table></figure>
+
+<p>接下来安装BreezeBlurred，首先安装依赖：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S kdecoration qt5-declarative qt5-x11extras kcoreaddons kguiaddons kconfigwidgets kwindowsystem fftw cmake extra-cmake-modules</span><br></pre></td></tr></table></figure>
+
+<p>接下来使用如下命令进行安装：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/alex47/BreezeBlurred</span><br><span class="line">cd BreezeBlurred</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DKDE_INSTALL_LIBDIR=lib -DBUILD_TESTING=OFF -DKDE_INSTALL_USE_QT_SYS_PATHS=ON</span><br><span class="line">sudo make install</span><br><span class="line">kwin_x11 --replace &amp;</span><br></pre></td></tr></table></figure>
+
+<p>安装之后进行配置，参考kcm-colorful的readme文件，此处根据Manjaro进行了调整：</p>
+<ol>
+<li><p>打开“系统设置”，在“外观”分类进入“Plasma 样式”选项，选择“Colorful”。</p>
+</li>
+<li><p>在“外观”分类进入“应用程序风格”选项，再进入“窗口装饰”选项，在“主题”选项卡中选择“微风Blurred”。(“标题栏按钮”选项卡也可以根据喜好自行配置)</p>
+</li>
+<li><p>点击“微风Blurred”预览图右下角的配置按钮，进行如下配置：</p>
+<ul>
+<li><p>“常规”选项卡中：</p>
+<ul>
+<li>*“按钮大小”选择“小”。</li>
+<li>*勾选“在关闭按钮周围绘制圆圈”。</li>
+<li>*勾选“为无边框窗口添加缩放柄”。</li>
+<li>“Opacity”(不透明度)设置为“30%”。</li>
+</ul>
+</li>
+<li><p>*“阴影”选项卡中：</p>
+<ul>
+<li>“大小”选择“很大”。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在“工作区”分类进入“工作空间行为”选项，再进入“桌面特效”选项，在“外观”分类勾选“模糊”和“背景对比度”选项。</p>
+</li>
+</ol>
+<h4 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h4><p>本部分参考了<a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_33528967/article/details/93380729">此页面</a>。</p>
+<p>首先安装所需要的字体。如果是搭配Windows的双系统可以直接拷贝系统文件夹中的Fonts文件夹，在Manjaro的某个目录中粘贴。使用如下命令进行安装：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /usr/share/fonts/winfonts/</span><br><span class="line">sudo cp win_font_path/* /usr/share/fonts/winfonts/</span><br><span class="line">cd /usr/share/fonts/winfonts/</span><br><span class="line">rm *.fon</span><br><span class="line">sudo mkfontscale</span><br><span class="line">sudo mkfontdir</span><br><span class="line">fc-cache -fv</span><br></pre></td></tr></table></figure>
+
+<p>对于.ttc字体集合，需要在“系统设置→外观&gt;字体→字体管理→从文件安装…”进行安装。其他具体安装方式可以参考Arch Linux官方的字体维基页面。</p>
+<p>设法使用Apple系字体，利用<a target="_blank" rel="noopener" href="https://github.com/xMuu/arch-kde-fontconfig">此页面</a>提供的方法。(但是其中苹方字体的名称似乎写成了“.萍方”？？)</p>
+<p>先使用如下命令下载所需文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/xMuu/arch-kde-fontconfig.git</span><br></pre></td></tr></table></figure>
+
+<p>安装所需字体后，编辑该目录下的<code>64-language-selector-prefer.conf</code>文件(可根据情况对源文件进行备份)，本人的配置如下，差异请自行比对。(需要提前安装Menlo字体)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">fontconfig</span> <span class="keyword">SYSTEM</span> <span class="string">&quot;fonts.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">fontconfig</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">alias</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">family</span>&gt;</span>sans-serif<span class="tag">&lt;/<span class="name">family</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">prefer</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">family</span>&gt;</span>SF Pro Text<span class="tag">&lt;/<span class="name">family</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">family</span>&gt;</span>PingFang SC<span class="tag">&lt;/<span class="name">family</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">family</span>&gt;</span>PingFang HK<span class="tag">&lt;/<span class="name">family</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">family</span>&gt;</span>PingFang TC<span class="tag">&lt;/<span class="name">family</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">prefer</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">alias</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">alias</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">family</span>&gt;</span>monospace<span class="tag">&lt;/<span class="name">family</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">prefer</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">family</span>&gt;</span>Menlo<span class="tag">&lt;/<span class="name">family</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">family</span>&gt;</span>PingFang SC<span class="tag">&lt;/<span class="name">family</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">family</span>&gt;</span>PingFang HK<span class="tag">&lt;/<span class="name">family</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">family</span>&gt;</span>PingFang TC<span class="tag">&lt;/<span class="name">family</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">prefer</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">alias</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">alias</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">family</span>&gt;</span>serif<span class="tag">&lt;/<span class="name">family</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">prefer</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">family</span>&gt;</span>Source Serif Pro<span class="tag">&lt;/<span class="name">family</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">family</span>&gt;</span>Source Han Serif CN<span class="tag">&lt;/<span class="name">family</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">family</span>&gt;</span>Noto Serif CJK SC<span class="tag">&lt;/<span class="name">family</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">family</span>&gt;</span>Noto Serif CJK TC<span class="tag">&lt;/<span class="name">family</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">prefer</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">alias</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">fontconfig</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>修改之后即可进行如下操作：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd arch-kde-fontconfig</span><br><span class="line">sudo mv 64-language-selector-prefer.conf 64-language-selector-prefer.conf.old</span><br><span class="line">sudo cp 64-language-selector-prefer.conf /etc/fonts/conf.avail/</span><br><span class="line">sudo ln -s /etc/fonts/conf.avail/64-language-selector-prefer.conf /etc/fonts/conf.d/64-language-selector-prefer.conf</span><br><span class="line">sudo fc-cache -fv</span><br></pre></td></tr></table></figure>
+
+<p>之后就可以在系统设置中调整字体了，可以参考上述Github页面。</p>
+<p>安装思源字体、文泉驿字体、DejaVu字体、Noto字体：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S wqy-microhei wqy-bitmapfont wqy-zenhei wqy-microhei-lite</span><br><span class="line">sudo pacman -S adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts adobe-source-han-mono-cn-fonts</span><br><span class="line">sudo pacman -S ttf-dejavu</span><br><span class="line">sudo pacman -S noto-fonts noto-fonts-extra noto-fonts-emoji noto-fonts-cjk</span><br></pre></td></tr></table></figure>
+
+<h4 id="其他美化"><a href="#其他美化" class="headerlink" title="其他美化"></a>其他美化</h4><p>主要是“桌面特效”这一项，选项记不住所以这里记录一下。</p>
+<ul>
+<li>工作区&gt;工作空间行为：<ul>
+<li>常规行为→点击行为：双击打开文件和文件夹</li>
+<li>屏幕边缘→全部取消；四分拼接20%</li>
+<li>桌面特效→外观除破碎、缩略图置边、触摸点、飘落、鼠标标记、压扁全勾选</li>
+</ul>
+</li>
+<li>工作区&gt;开机与关机→SDDM&gt;主题→Sugar Candy</li>
+<li>……</li>
+</ul>
+<h3 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h3><p>本人使用Apple Music，所以直接<a target="_blank" rel="noopener" href="https://music.apple.com/">https://music.apple.com/</a>。<br>(说起来现在新推出了一个<a target="_blank" rel="noopener" href="https://beta.music.apple.com/">beta版本</a>，UI看起来不错哦)</p>
+<h3 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h3><p>使用如下命令安装Steam：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy steam</span><br></pre></td></tr></table></figure>
+
+<h3 id="其他杂项"><a href="#其他杂项" class="headerlink" title="其他杂项"></a>其他杂项</h3><p><del>卸载Gwenview，这个屑软件依赖版本太高了，以至于需要unstable版本系统才能提供，导致无法使用。</del>Manjaro系统更新之后该问题得以解决。当然如果不愿使用Gwenview，也可以参考<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/List_of_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">Arch Linux官方维基页面</a>选择喜欢的应用程序(不仅包括图像查看器)。</p>
+<p>可以使用如下命令卸载Gwenview，安装GPicView (<strong>上古界面+反人类操作预警，并不推荐</strong>)(<em>所以我为什么要讲呢….</em>)：(使用<code>pacman -Rsc</code>时一定要关注卸载了哪些软件包，因为它会自动地卸载相关于软件包的无用依赖)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Rsc gwenview</span><br><span class="line">sudo pacman -Syy gpicview</span><br></pre></td></tr></table></figure>
+
+<p>视频等可以使用VLC播放器：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -Syy vlc</span><br></pre></td></tr></table></figure>
+
+<h2 id="事后急救汇总"><a href="#事后急救汇总" class="headerlink" title="*事后急救汇总"></a>*事后急救汇总</h2><h3 id="拯救grub"><a href="#拯救grub" class="headerlink" title="拯救grub"></a>拯救grub</h3><p>本人安装的是双系统(Windows 10 + Manjaro)，安装完Manjaro之后进了Windows，结果抽风，把Manjaro的EFI(FAT32)盘给隐藏了(Windows和Manjaro没有安装在同一块硬盘上)，再开机的时候就进入不了Manjaro了，惊慌之下赶紧进入Windows取消隐藏Manjaro的EFI盘，重启依然不管用。因此迫不得已琢磨起来该怎么修复。</p>
+<p>显然问题不会出现在其他分区上，只能是FAT32分区上，或者FAT32分区和根目录的联系上(？？不清楚有这种东西吗)。我当作前者处理。</p>
+<p>处理方式参考了<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/155981949">此页面</a>，<a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/111889/how-do-i-update-grub-in-arch-linux">此页面</a>和<a target="_blank" rel="noopener" href="https://wiki.manjaro.org/index.php/Restore_the_GRUB_Bootloader">Manjaro官方的恢复GRUB引导维基页面</a>。维基页面还包含了其他可能出现的问题以及解决方法。</p>
+<p>使用Manjaro的实时系统U盘，进入实时系统之后打开终端，使用<code>lsblk -f</code>查看分区分布，通过挂载点特征、分区大小等信息确定各个分区的编号。接下来使用如下命令给出<code>chroot</code>选项：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo manjaro-chroot -a</span><br></pre></td></tr></table></figure>
+
+<p>一般情况下，在漫长等待之后会收到仅列出第0项的“Detected Systems”列表，此时……输入1，回车。</p>
+<p>接下来挂载对应分区，使用如下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mount /dev/sdxy /mnt</span><br><span class="line">sudo mount /dev/sdmn /mnt/boot</span><br><span class="line">sudo mount /dev/sdpq /mnt/boot/efi </span><br></pre></td></tr></table></figure>
+
+<p>挂载结束之后，安装mtools和os-prober。(如果可能的话)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S mtools os-prober</span><br></pre></td></tr></table></figure>
+
+<p>之后切换根目录：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /mnt</span><br><span class="line">chroot ./</span><br></pre></td></tr></table></figure>
+
+<p>重装GRUB：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=manjaro --recheck</span><br></pre></td></tr></table></figure>
+
+<p>更新GRUB：(或者直接<code>grub-mkconfig</code>)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+
+<p>至于修复好之后每每开机都会显示的<code>Welcome to GRUB!</code>，我实在是懒得搞了orz，想了解或者折腾的可以参考<a target="_blank" rel="noopener" href="http://rabexc.org/posts/grub-shush">此页面</a>。</p>
+<h3 id="无损扩大分区空间-需要Windows系统"><a href="#无损扩大分区空间-需要Windows系统" class="headerlink" title="无损扩大分区空间(需要Windows系统)"></a>无损扩大分区空间(需要Windows系统)</h3><h4 id="所需工具"><a href="#所需工具" class="headerlink" title="所需工具"></a>所需工具</h4><ul>
+<li>安装了Manjaro实时系统的U盘(Manjaro安装U盘)。</li>
+<li>Disk Genius和&#x2F;或傲梅分区助手。</li>
+</ul>
+<h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><p>该部分参考了<a target="_blank" rel="noopener" href="https://blog.pinkd.moe/linux/2018/01/31/resize-a-ext4-partiton-safely">此页面</a>。</p>
+<ul>
+<li>使用熟悉的方式分出用于合并至Linux分区的空间。</li>
+<li>烧录Manjaro实时系统至U盘。方法：Windows使用Rufuus工具，Linux使用<code>dd</code>命令。具体参考前文。</li>
+<li>在Windows下(包括PE)运行Disk Genius，将ext4分区前后紧贴的分区搬移至空闲空间首尾位置，为ext4附近留出空间。</li>
+<li>在Manjaro实时系统中，使用命令<code>lsblk</code>查看希望扩展的分区编号，以&#x2F;dev&#x2F;sda2为例，之后使用如下命令来检查分区内是否有错、能否进行优化整理：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e2fsck -f /dev/sda2</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修复完之后，使用Manjaro提供的系统工具“KDE 分区管理”进行扩容操作。操作完成后再次使用<code>e2fsck -f /dev/sda2</code>命令查错。至此，分区无损扩容完成。</li>
+</ul>
+<blockquote>
+<p>*<strong>另外值得注意的是，如果使用Disk Genius进行了删除Linux-swap分区并重建的操作，则需要在Manjaro实时系统中(利用“KDE 分区管理等工具”对Disk Genius生成的Linux-swap分区重新格式化，否则系统无法识别，不能启动。</strong></p>
+</blockquote>
+<h2 id="未尽事宜"><a href="#未尽事宜" class="headerlink" title="未尽事宜"></a>未尽事宜</h2><ul>
+<li>iOS设备管理。(预计无解)</li>
+<li>Better (fxcking) Tencent software experience。(预计无解+1)</li>
+<li>And more……</li>
+</ul>
+</div><div class="tags"><a href="/tags/VPN"><i class="fa fa-tag">VPN</i></a><a href="/tags/网络"><i class="fa fa-tag">网络</i></a><a href="/tags/Arch Linux"><i class="fa fa-tag">Arch Linux</i></a><a href="/tags/Manjaro"><i class="fa fa-tag">Manjaro</i></a><a href="/tags/OS"><i class="fa fa-tag">OS</i></a><a href="/tags/配置"><i class="fa fa-tag">配置</i></a></div><div class="post-nav"><a class="pre" href="/2020/08/21/eclipse-java-installation-chinese-localization-and-configuration-on-manjaro/">Manjaro上的Eclipse (Java)安装与配置(包括汉化)</a><a class="next" href="/2020/05/28/install-windows-7-64-bit-on-dell-inspiron-7572/">为Dell Inspiron 7572安装Windows 7 (64位)</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://y2-whyto.github.io"/></form></div><div class="widget"><div class="author-info"><a class="info-avatar" href="/about/" title="关于"><img class="nofancybox" src="/img/avatar.png"/></a><p>To be a better man.</p><a class="info-icon" href="https://twitter.com/username" title="Twitter" target="_blank" style="margin-inline:5px"> <i class="fa fa-twitter-square" style="margin-inline:5px"></i></a><a class="info-icon" href="mailto:admin@domain.com" title="Email" target="_blank" style="margin-inline:5px"> <i class="fa fa-envelope-square" style="margin-inline:5px"></i></a><a class="info-icon" href="https://github.com/username" title="Github" target="_blank" style="margin-inline:5px"> <i class="fa fa-github-square" style="margin-inline:5px"></i></a><a class="info-icon" href="/atom.xml" title="RSS" target="_blank" style="margin-inline:5px"> <i class="fa fa-rss-square" style="margin-inline:5px"></i></a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android%E5%88%B7%E6%9C%BA/">Android刷机</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Chromium-OS/">Chromium OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Linux/">Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Linux/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/">软件使用</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/%E6%9C%AA%E5%88%86%E7%B1%BB/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/">网络相关</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/macOS/">macOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/">网络相关</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%8D%B8%E8%BD%BD/">软件卸载</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/JDK/" style="font-size: 15px;">JDK</a> <a href="/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" style="font-size: 15px;">环境变量</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/%E5%8D%B8%E8%BD%BD/" style="font-size: 15px;">卸载</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/MIUI/" style="font-size: 15px;">MIUI</a> <a href="/tags/Pixel-Experience/" style="font-size: 15px;">Pixel Experience</a> <a href="/tags/%E5%88%B7%E6%9C%BA/" style="font-size: 15px;">刷机</a> <a href="/tags/%E5%AE%89%E5%8D%93/" style="font-size: 15px;">安卓</a> <a href="/tags/%E5%B0%8F%E7%B1%B3/" style="font-size: 15px;">小米</a> <a href="/tags/Connectify/" style="font-size: 15px;">Connectify</a> <a href="/tags/SSTap/" style="font-size: 15px;">SSTap</a> <a href="/tags/VPN/" style="font-size: 15px;">VPN</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 15px;">网络</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB/" style="font-size: 15px;">网络共享</a> <a href="/tags/7572/" style="font-size: 15px;">7572</a> <a href="/tags/Dell/" style="font-size: 15px;">Dell</a> <a href="/tags/Intel/" style="font-size: 15px;">Intel</a> <a href="/tags/USB/" style="font-size: 15px;">USB</a> <a href="/tags/Windows-7/" style="font-size: 15px;">Windows 7</a> <a href="/tags/%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F/" style="font-size: 15px;">驱动程序</a> <a href="/tags/Chrome-OS/" style="font-size: 15px;">Chrome OS</a> <a href="/tags/Chromefy/" style="font-size: 15px;">Chromefy</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Arch-Linux/" style="font-size: 15px;">Arch Linux</a> <a href="/tags/Manjaro/" style="font-size: 15px;">Manjaro</a> <a href="/tags/OS/" style="font-size: 15px;">OS</a> <a href="/tags/%E9%85%8D%E7%BD%AE/" style="font-size: 15px;">配置</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 15px;">计算机网络</a> <a href="/tags/Eclipse/" style="font-size: 15px;">Eclipse</a> <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 15px;">安装</a> <a href="/tags/%E6%B1%89%E5%8C%96/" style="font-size: 15px;">汉化</a> <a href="/tags/macOS/" style="font-size: 15px;">macOS</a> <a href="/tags/%E9%99%8D%E7%BA%A7/" style="font-size: 15px;">降级</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" style="font-size: 15px;">数据迁移</a> <a href="/tags/MacBook-Pro/" style="font-size: 15px;">MacBook Pro</a> <a href="/tags/Big-Sur/" style="font-size: 15px;">Big Sur</a> <a href="/tags/Catalina/" style="font-size: 15px;">Catalina</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/08/20/downgrading-macos-from-big-sur-to-catalina-for-macbook-pro-13-inches-2020-intel-with-data-migrated/">为MacBook Pro（13寸，2020，Intel处理器）进行系统降级并迁移数据（由Big Sur至Catalina）</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/25/computer-networks/">计算机网络 (更新中)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/21/eclipse-java-installation-chinese-localization-and-configuration-on-manjaro/">Manjaro上的Eclipse (Java)安装与配置(包括汉化)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/08/17/personal-manjaro-arch-linux-configuration-record/">个人Manjaro配置记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/28/install-windows-7-64-bit-on-dell-inspiron-7572/">为Dell Inspiron 7572安装Windows 7 (64位)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/08/installing-chromium-os-on-pc/">为PC安装Chromium OS</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/sharing-vpn-connection-through-windows-hotspot/">通过Windows移动热点分享VPN连接</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/30/flashing-pixel-experience-for-xiaomi-mi-8/">为小米8刷入Pixel Experience</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/29/configuring-environment-variables-for-jdk-11/">JDK 11的环境变量配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/29/how-to-completely-uninstall-java/">如何完全卸载Java</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2023 <a href="/." rel="nofollow">Whyto的笔记存放站.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/latest/jquery.fancybox.min.js"></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0"></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/latest/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>
